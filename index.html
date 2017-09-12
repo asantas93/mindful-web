@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Mindful Massage & Bodywork</title>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous" type="text/css">
+    <link href="css/mindful-massage.css" rel="stylesheet", type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <script src="js/aboutController.js"></script>
+    <script src="js/serviceController.js"></script>
+
+  </head>
+
+  <body>
+    <div id="main" ng-app ng-init="active = 'Home';">
+
+      <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="#" ng-click="active='Home'">Mindful Massage & Bodywork</a>
+          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#" ng-click="active='About'">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" ng-click="active='Services'">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" ng-click="active='Contact'">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://mindfulmassagebodywork.acuityscheduling.com/">Book an Appointment</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://squareup.com/store/mindful-massage-and-bodywork-2">Gift Certificates</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container">
+        <h1 class="mt-4 mb-3" ng-hide="active == 'Home'">{{active}}</h1>
+
+        <ol class="breadcrumb" ng-hide="active == 'Home'">
+          <li class="breadcrumb-item">
+            <a href='#' ng-click="active = 'Home'">Home</a>
+          </li>
+          <li class="breadcrumb-item active">{{active}}</li>
+        </ol>
+      </div>
+
+      <div ng-include="'home.html'" ng-show="active == 'Home'"></div>
+      <div ng-include="'about.html'" ng-show="active == 'About'"></div>
+      <div ng-include="'services.html'" ng-show="active == 'Services'"></div>
+      <div ng-include="'contact.html'" ng-show="active == 'Contact'"></div>
+
+      <br>
+
+      <footer class="py-2 bg-dark">
+        <div class="container">
+          <p class="m-0 text-center text-white">
+          Copyright &copy; Mindful Massage &amp; Bodywork 2017
+          </p>
+        </div>
+      </footer>
+
+    </div>
+    <script type='text/javascript'>
+        $(document).ready(function() {
+             $('.carousel').carousel({})
+        });
+    </script>
+  </body>
+</html>
+
+

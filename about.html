@@ -1,0 +1,32 @@
+<!-- Page Content -->
+<div class="container" ng-controller="aboutController">
+
+  <!-- Intro Content -->
+  <div class="row">
+    <div class="col-lg-6">
+      <img class="img-fluid rounded mb-4" src="img/owners.jpg" alt="">
+    </div>
+    <div class="col-lg-6">
+      <h2>About Mindful Massage</h2>
+      <p>So much of our lives are spent scurrying here and there. Our bodies are in perpetual motion, and our minds tend to follow the same pattern always thinking about something we need to do or mulling over some problem. Our minds are forever dwelling in the past or racing into the future. It is a rare occurrence for the body and mind to relax and be totally in the present.</p>
+      <p>Attending to the present moment is being in a state of mindfulness. When we are mindful of the present moment we are able to feel refreshed and have mental clarity. Mindfully attending to our lives is a practice we can develop through common daily acts such as walking, eating and breathing. Massage therapy and bodywork in general are excellent ways to encourage mindfulness. Therapeutic touch facilitates being present, being in the here and now.</p>
+    </div>
+  </div>
+  <!-- /.row -->
+
+  <!-- Team Members -->
+  <h2>Our Therapists</h2>
+
+  <div class="row">
+    <div class="col-lg-3 mb-5" ng-repeat="therapist in therapists">
+      <div class="card h-100 text-center">
+        <img class="card-img-top" ng-src="{{therapist.img}}" alt="">
+        <div class="card-body" style="padding: 9px">
+          <h4 class="card-title">{{therapist.name}}</h4>
+          <h6 class="card-subtitle mb-2 text-muted">{{therapist.edu}}</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
