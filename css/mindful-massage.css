@@ -8,6 +8,13 @@ body {
     }
 }
 
+#amper {
+    max-height: 23px;
+    opacity: 0.6;
+    padding-left: 6px;
+    padding-right: 4px;
+}
+
 .carousel-item {
     height: 65vh;
     min-height: 300px;
