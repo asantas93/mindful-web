@@ -25,12 +25,12 @@ function serviceController($scope) {
       desc: 'This barefoot technique provides a deep blanket of pressure that penetrates even the most inward muscle groups. It is powerfully relaxing to both body and mind, useful in stimulating the lymphatic system, and effective in treating chronic muscle tension.',
     },
     {
-      name: 'CORE Mysofascial Therapy',
-      desc: 'Utilizes deep and systematic strokes to spread and stretch connective tissue, or fascia, in which stress, adhesions and painful tension are held.',
+      name: 'CORE Myofascial Therapy',
+      desc: 'CORE Myofascial Therapy utilizes deep and systematic strokes to spread and stretch connective tissue, or fascia, in which stress, adhesions and painful tension are held. Ideal for chronic pain, sports enhancement and remediation, and for addressing issues related to postural dysfunction.',
     },
     {
       name: 'Thai Assisted Yoga Massage',
-      desc: 'Utilizes slow and deep compressions and stretches to improve posture, relieve myofascial pain, and restore balance and strength. The work is done on the floor on a mat with the client wearing loose clothing.',
+      desc: 'Thai Assisted Yoga Massage utilizes slow and deep compressions and stretches to improve posture, relieve myofascial pain, and restore balance and strength. The work can either be done on a mat with the client wearing loose clothing, or incorporated into a traditional table routine.',
     },
     {
       name: 'Neuromuscular Therapy',
