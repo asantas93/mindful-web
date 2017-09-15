@@ -1,10 +1,5 @@
-<!-- Page Content -->
 <div class="container" ng-controller="serviceController">
-
-  <!-- Image Header -->
   <img class="img-fluid rounded mb-4" src="img/services.jpg" alt="">
-
-  <!-- Marketing Icons Section -->
   <div class="row">
     <div class="col-lg-6 mb-4" ng-repeat="service in services">
       <div class="card h-100">
@@ -12,12 +7,22 @@
         <div class="card-body">
           <p class="card-text">{{service.desc}}</p>
         </div>
-        <div class="card-footer" ng-show="service.link">
-          <a ng-href="{{service.link}}" target="_blank" class="btn btn-primary">Learn More</a>
+        <div class="card-footer" ng-show="service.link || service.prices">
+          <a ng-show="service.link" ng-href="{{service.link}}" target="_blank" class="btn btn-sm btn-primary">Learn More</a>
+          <button class="btn btn-sm btn-secondary" type="button" data-toggle="collapse" data-target="#collapse-{{$index}}" aria-expanded="false" aria-controls="collapse-{{$index}}">
+            View Prices
+          </button>
+          <div class="collapse" id="collapse-{{$index}}">
+              <br>
+            <div class="card card-block">
+              <ul class="list-group">
+                <li class="list-group-item" ng-repeat="price in service.prices">{{price.duration}} <span class="float-right">{{price.price}}</span></li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <!-- /.row -->
-
 </div>
+
