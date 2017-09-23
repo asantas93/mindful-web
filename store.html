@@ -1,0 +1,86 @@
+<div class="container" ng-controller="storeController">
+
+  <div ng-show="pane == 'shop'">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="row">
+          <div class="col-lg-6 mb-3 pr-1" ng-repeat="item in inventory">
+            <div class="card h-100 text-center">
+              <h5 class="card-header">{{item.name}}</h5>
+              <div class="card-body">
+                <p class="card-text"><small class="text-muted">{{item.description}}</small></p>
+              </div>
+              <div class="dropdown card-footer">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Add to cart
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="#" ng-repeat="var in item.variations | orderBy:'price'" ng-click="cartAdd(item.id, var.id)">
+                    {{var.name}}: {{formatMoney(var.price)}}
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-4">
+        <h5 class="card-header" style="border: 1px solid rgba(0,0,0,.125); border-bottom-width: 0px">
+          <span>Product</span><span class="float-right">Quantity</span>
+        </h5>
+        <div class="card-body" style="padding: 0;">
+          <ul class="list-group">
+          <div ng-repeat="item in inventory">
+            <li class="list-group-item justify-content-between" ng-repeat="var in item.variations" ng-show="cart[item.id][var.id]">
+              {{var.name}} {{item.name}} ({{formatMoney(var.price)}} each)
+              <button type="button" class="btn btn-success btn-sm float-right" ng-click="cartAdd(id, var)"> + </button>
+              <span class="float-right">&nbsp;{{cart[item.id][var.id]}}&nbsp;</span>
+              <button type="button" class="btn btn-danger btn-sm float-right" ng-click="cartDec(id, var)"> - </button>
+            </li>
+          </div>
+          </ul>
+        </div>
+        <div style="border: 1px solid rgba(0,0,0,.125); padding: 5px">
+        Total: ${{total().toFixed(2)}}
+        </div>
+        <div class="card-footer" style="border: 1px solid rgba(0,0,0,.125); border-top-width: 0px;">
+          <a href="#" class="btn btn-primary" ng-click="pane = 'payment'">Checkout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div ng-show="pane == 'payment'">
+    <label>Card Number</label>
+    <div id="sq-card-number"></div>
+    <label>CVV</label>
+    <div id="sq-cvv"></div>
+    <label>Expiration Date</label>
+    <div id="sq-expiration-date"></div>
+    <label>Postal Code</label>
+    <div id="sq-postal-code"></div>
+
+    <!--
+      After the SqPaymentForm generates a card nonce, *this* form POSTs the generated
+      card nonce to your application's server.
+
+      You should replace the action attribute of the form with the path of
+      the URL you want to POST the nonce to (for example, "/process-card")
+    -->
+    <form id="nonce-form" novalidate action="REPLACE_ME" method="post">
+
+      <!--
+        Whenever a nonce is generated, it's assigned as the value of this hidden
+        input field.
+      -->
+      <input type="hidden" id="card-nonce" name="nonce">
+
+      <!--
+        Clicking this Submit button kicks off the process to generate a card nonce
+        from the buyer's card information.
+      -->
+      <a href="#" class="btn btn-secondary" ng-click="pane = 'shop'">Back</a>
+      <a href="#" class="btn btn-success" type="submit" ng-click="requestCardNonce(event)">Confirm Purchase</a>
+    </form>
+  </div>
+</div>

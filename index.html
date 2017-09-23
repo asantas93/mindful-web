@@ -35,6 +35,7 @@
     <script src="js/aboutController.js"></script>
     <script src="js/serviceController.js"></script>
     <script src="js/indexController.js"></script>
+    <script src="js/storeController.js"></script>
 
     <meta name="keywords" content="massage, massage therapy, bodywork, valdosta massage and bodywork, spas in georgia, massage therapy in south georgia, bodywork in valdosta, mindful massage in valdosta, day spa valdosta, spas in atlanta, day spas atlanta, day spa valdosta georgia, day spas in valdosta, valdosta spa, spas in valdosta, valdosta day spas, spa + valdosta">
     <meta name="description" content="Our mission to provide the best therapeutic massage and bodywork services possible in order to meet each of our client's unique, individual needs.  Our goal is to enhance the overall health and quality of life of each of our clients.">
@@ -67,7 +68,7 @@
                 <a class="nav-link" target="_blank" href="https://mindfulmassagebodywork.acuityscheduling.com/">Book an Appointment</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" target="_blank" href="https://squareup.com/store/mindful-massage-and-bodywork-2">Gift Certificates</a>
+                <a class="nav-link" href="#" ng-click="navItemClick('Store')">Store</a>
               </li>
             </ul>
           </div>
@@ -89,6 +90,7 @@
       <div ng-include="'about.html'" ng-show="active == 'About'"></div>
       <div ng-include="'services.html'" ng-show="active == 'Services'"></div>
       <div ng-include="'contact.html'" ng-show="active == 'Contact'"></div>
+      <div ng-include="'store.html'" ng-show="active == 'Store'"></div>
 
       <br>
 
