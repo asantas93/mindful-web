@@ -1,8 +1,8 @@
 <div class="container" ng-controller="storeController">
 
-  <div ng-show="pane == 'shop'">
+  <div>
     <div class="row">
-      <div class="col-lg-8">
+      <div ng-show="pane == 'shop'" class="col-lg-8">
         <div class="row">
           <div class="col-lg-6 mb-3 pr-1" ng-repeat="item in inventory">
             <div class="card h-100 text-center">
@@ -24,6 +24,21 @@
           </div>
         </div>
       </div>
+      <div ng-show="pane == 'payment'" class="col-lg-8">
+        <div class="card">
+        <h5 class="card-header">Payment Information</h5>
+        <div class="card-body">
+          <label>Card Number</label>
+          <div id="sq-card-number"></div>
+          <label>CVV</label>
+          <div id="sq-cvv"></div>
+          <label>Expiration Date</label>
+          <div id="sq-expiration-date"></div>
+          <label>Postal Code</label>
+          <div id="sq-postal-code"></div>
+        </div>
+        </div>
+      </div>
       <div class="col-xl-4">
         <h5 class="card-header" style="border: 1px solid rgba(0,0,0,.125); border-bottom-width: 0px">
           <span>Product</span><span class="float-right">Quantity</span>
@@ -37,7 +52,7 @@
               <span class="float-right">&nbsp;{{cart[item.id][var.id]}}&nbsp;</span>
               <button type="button" class="btn btn-danger btn-sm float-right" ng-click="cartDec(item.id, var.id)"> - </button>
               <br>
-              <small class=text-muted">{{formatMoney(var.price)}} each</small>
+              <small class="text-muted">{{formatMoney(var.price)}} each</small>
             </li>
           </div>
           </ul>
@@ -45,7 +60,7 @@
         <div style="border: 1px solid rgba(0,0,0,.125); padding: 5px">
         Total: ${{total().toFixed(2)}}
         </div>
-        <div class="card-footer" style="border: 1px solid rgba(0,0,0,.125); border-top-width: 0px;">
+        <div ng-show="pane == 'shop'" class="card-footer" style="border: 1px solid rgba(0,0,0,.125); border-top-width: 0px;">
           <a href="#" class="btn btn-primary" ng-click="pane = 'payment'">Checkout</a>
         </div>
       </div>
@@ -53,14 +68,6 @@
   </div>
 
   <div ng-show="pane == 'payment'">
-    <label>Card Number</label>
-    <div id="sq-card-number"></div>
-    <label>CVV</label>
-    <div id="sq-cvv"></div>
-    <label>Expiration Date</label>
-    <div id="sq-expiration-date"></div>
-    <label>Postal Code</label>
-    <div id="sq-postal-code"></div>
 
     <!--
       After the SqPaymentForm generates a card nonce, *this* form POSTs the generated
@@ -81,8 +88,9 @@
         Clicking this Submit button kicks off the process to generate a card nonce
         from the buyer's card information.
       -->
+      <br>
       <a href="#" class="btn btn-secondary" ng-click="pane = 'shop'">Back</a>
-      <a href="#" class="btn btn-success" type="submit" ng-click="requestCardNonce(event)">Confirm Purchase</a>
+      <a href="#" class="btn btn-success" type="submit" ng-click="requestCardNonce($event)">Confirm Purchase</a>
     </form>
   </div>
 </div>
