@@ -32,10 +32,12 @@
           <ul class="list-group">
           <div ng-repeat="item in inventory">
             <li class="list-group-item justify-content-between" ng-repeat="var in item.variations" ng-show="cart[item.id][var.id]">
-              {{var.name}} {{item.name}} ({{formatMoney(var.price)}} each)
+              {{var.name}} {{item.name}}
               <button type="button" class="btn btn-success btn-sm float-right" ng-click="cartAdd(item.id, var.id)"> + </button>
               <span class="float-right">&nbsp;{{cart[item.id][var.id]}}&nbsp;</span>
               <button type="button" class="btn btn-danger btn-sm float-right" ng-click="cartDec(item.id, var.id)"> - </button>
+              <br>
+              <small class=text-muted">{{formatMoney(var.price)}} each</small>
             </li>
           </div>
           </ul>
