@@ -9,6 +9,10 @@ body {
     }
 }
 
+.ng-invalid.ng-dirty {
+  border-color: red;
+}
+
 #amper {
     max-height: 23px;
     opacity: 0.6;

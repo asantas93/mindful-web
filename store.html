@@ -15,7 +15,7 @@
                   Add to cart
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="#" ng-repeat="var in item.variations | orderBy:'price'" ng-click="cartAdd(item.id, var.id)">
+                  <a class="dropdown-item" href="#" ng-repeat="var in item.variations | orderBy:'price'" ng-click="cartAdd(item, var)">
                     {{var.name}}: {{formatMoney(var.price)}}
                   </a>
                 </div>
@@ -23,6 +23,36 @@
             </div>
           </div>
         </div>
+      </div>
+      <div ng-show="pane == 'customize'" class="col-lg-8">
+        <form name="giftForm">
+          <div class="card" ng-repeat="order in cart">
+            <h5 class="card-header">(x{{order.quantity}}) {{order.disp.variation.name}} {{order.disp.item.name}}{{couplesSuffix(order)}}</h5>
+            <div class="card-body">
+                <div class="form-group row">
+                  <label for="from-name-{{$index}}" class="col-2 col-form-label">From*</label>
+                  <div class="col-10">
+                    <input class="form-control" type="text" placeholder="Enter the gift giver's name" ng-model="order.from" id="from-name-{{$index}}" required>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="recipient-name-{{$index}}" class="col-2 col-form-label">To*</label>
+                  <div class="col-10">
+                    <input class="form-control" type="text" placeholder="Enter recipient's name" ng-model="order.toName" id="recipient-name-{{$index}}" required>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail{{$index}}">Recipient email address*</label>
+                  <input type="email" class="form-control" id="exampleInputEmail{{$index}}" aria-describedby="emailHelp" placeholder="Enter email" ng-model="order.toEmail" required>
+                  <small id="emailHelp" class="form-text text-muted">Enter your own if you would like to deliver the gift yourself.</small>
+                </div>
+                <div class="form-group">
+                  <label for="giftMessage{{$index}}">Gift Message</label>
+                  <textarea class="form-control" id="giftMessage{{$index}}" ng-model="order.giftMessage" rows="3"></textarea>
+                </div>
+            </div>
+          </div>
+        </form>
       </div>
       <div ng-show="pane == 'payment'" class="col-lg-8">
         <div class="card">
@@ -45,28 +75,46 @@
         </h5>
         <div class="card-body" style="padding: 0;">
           <ul class="list-group">
-          <div ng-repeat="item in inventory">
-            <li class="list-group-item justify-content-between" ng-repeat="var in item.variations" ng-show="cart[item.id][var.id]">
-              {{var.name}} {{item.name}}
-              <button type="button" class="btn btn-success btn-sm float-right" ng-click="cartAdd(item.id, var.id)"> + </button>
-              <span class="float-right">&nbsp;{{cart[item.id][var.id]}}&nbsp;</span>
-              <button type="button" class="btn btn-danger btn-sm float-right" ng-click="cartDec(item.id, var.id)"> - </button>
-              <br>
-              <small class="text-muted">{{formatMoney(var.price)}} each</small>
-            </li>
-          </div>
+          <li class="list-group-item justify-content-between" ng-repeat="order in cart">
+            {{order.disp.variation.name}} {{order.disp.item.name}}
+            <button type="button" class="btn btn-success btn-sm float-right" ng-click="quantityPlus($index)"> + </button>
+            <span class="float-right">&nbsp;{{order.quantity}}&nbsp;</span>
+            <button type="button" class="btn btn-danger btn-sm float-right" ng-click="quantityMinus($index)"> - </button>
+            <br>
+            <form>
+              <div class="form-check form-check-inline mb-sm-0">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1-{{index}}" ng-click="order.couples = false;" checked="">
+                  <small class="text-muted">individual</small>
+                </label>
+              </div>
+              <div class="form-check form-check-inline mb-sm-0">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2-{{index}}" ng-click="order.couples = true;">
+                  <small class="text-muted">couples</small>
+                </label>
+              </div>
+              </form>
+            <small class="text-muted">{{formatMoney(orderPrice(order))}} each</small>
+            <small class="text-muted" ng-show="order.couples"> ($10 charge for same room)</small>
+          </li>
           </ul>
         </div>
         <div style="border: 1px solid rgba(0,0,0,.125); padding: 5px">
-        Total: ${{total().toFixed(2)}}
+        Total: {{formatMoney(total())}}
         </div>
         <div ng-show="pane == 'shop'" class="card-footer" style="border: 1px solid rgba(0,0,0,.125); border-top-width: 0px;">
-          <a href="#" class="btn btn-primary" ng-click="pane = 'payment'">Checkout</a>
+          <a href="#" class="btn btn-primary" ng-click="pane = 'customize'">Checkout</a>
         </div>
       </div>
     </div>
   </div>
 
+  <div ng-show="pane == 'customize'">
+    <button href="#" class="btn btn-secondary" ng-click="pane = 'shop'">Back</button>
+    <button href="#" class="btn btn-primary" type="submit" ng-click="pane = 'payment'" ng-disabled="giftForm.$invalid">Next</button>
+
+  </div>
   <div ng-show="pane == 'payment'">
 
     <!--
@@ -89,7 +137,7 @@
         from the buyer's card information.
       -->
       <br>
-      <a href="#" class="btn btn-secondary" ng-click="pane = 'shop'">Back</a>
+      <a href="#" class="btn btn-secondary" ng-click="pane = 'customize'">Back</a>
       <a href="#" class="btn btn-success" type="submit" ng-click="requestCardNonce($event)">Confirm Purchase</a>
     </form>
   </div>

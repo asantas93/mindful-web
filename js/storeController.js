@@ -6,41 +6,60 @@ function storeController($scope, $http) {
   }).then(function successCallback(response) {
     const inventory = response.data
     $scope.inventory = inventory;
-    console.log(response);
-    var cart = {};
-    inventory.forEach(function(item) {
-      cart[item.id] = {};
-      item.variations.forEach(function(variation) {
-        cart[item.id][variation.id] = 0;
-      });
-    });
-    $scope.cart = cart;
   }, function failureCallback(response) {
     console.log(response);
   });
-
+  $scope.cart = [];
   $scope.total = function() {
     var tot = 0.0;
-    $scope.inventory.forEach(function(item) {
-      item.variations.forEach(function(variation) {
-        tot += variation.price * $scope.cart[item.id][variation.id];
-      });
+    $scope.cart.forEach(function(order) {
+      tot += $scope.orderPrice(order) * order.quantity;
     });
-    return (tot / 100);
+    return tot;
   };
   $scope.pane = 'shop';
   $scope.cartAdd = function(item, variation) {
-    $scope.cart[item][variation]++;
+    $scope.cart.push({
+      itemId: item.id,
+      variationId: variation.id,
+      quantity: 1,
+      from: null,
+      toName: null,
+      toEmail: null,
+      giftMessage: null,
+      couples: false,
+      disp: { // Not to be consumed server-side
+        item: item,
+        variation: variation,
+      },
+    });
   };
-  $scope.cartDec = function(item, variation) {
-    $scope.cart[item][variation]--;
-    if ($scope.cart[item][variation] < 0) {
-      $scope.cart[item][variation] = 0;
+  $scope.quantityMinus = function(i) {
+    $scope.cart[i].quantity--;
+    if ($scope.cart[i].quantity <= 0) {
+      $scope.cart.splice(i, 1);
     }
+  };
+  $scope.quantityPlus = function(i) {
+    console.log($scope.cart[i]);
+    $scope.cart[i].quantity++;
+  };
+  $scope.orderPrice = function(order) {
+    if (order.couples)
+      return order.disp.variation.price * 2 + 1000;
+    else
+      return order.disp.variation.price;
   };
   $scope.formatMoney = function(price) {
     return '$' + (price / 100.0).toFixed(2);
   };
+  $scope.couplesSuffix = function(order) {
+    if (order.couples)
+      return ' (couples)';
+    else
+      return '';
+  };
+  $scope.data = {};
   const applicationId = 'sandbox-sq0idp-F-DAUUp0H50hzA-mXBQJAg';
   $scope.paymentForm = new SqPaymentForm({
     applicationId: applicationId,
