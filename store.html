@@ -42,8 +42,8 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputEmail{{$index}}">Recipient email address*</label>
-                  <input type="email" class="form-control" id="exampleInputEmail{{$index}}" aria-describedby="emailHelp" placeholder="Enter email" ng-model="order.toEmail" required>
+                  <label for="toEmail{{$index}}">Recipient email address*</label>
+                  <input type="email" class="form-control" id="toEmail{{$index}}" aria-describedby="emailHelp" placeholder="Enter email" ng-model="order.toEmail" required>
                   <small id="emailHelp" class="form-text text-muted">Enter your own if you would like to deliver the gift yourself.</small>
                 </div>
                 <div class="form-group">
@@ -56,17 +56,17 @@
       </div>
       <div ng-show="pane == 'payment'" class="col-lg-8">
         <div class="card">
-        <h5 class="card-header">Payment Information</h5>
-        <div class="card-body">
-          <label>Card Number</label>
-          <div id="sq-card-number"></div>
-          <label>CVV</label>
-          <div id="sq-cvv"></div>
-          <label>Expiration Date</label>
-          <div id="sq-expiration-date"></div>
-          <label>Postal Code</label>
-          <div id="sq-postal-code"></div>
-        </div>
+          <h5 class="card-header">Payment Information</h5>
+          <div class="card-body">
+            <label>Card Number</label>
+            <div id="sq-card-number"></div>
+            <label>CVV</label>
+            <div id="sq-cvv"></div>
+            <label>Expiration Date</label>
+            <div id="sq-expiration-date"></div>
+            <label>Postal Code</label>
+            <div id="sq-postal-code"></div>
+          </div>
         </div>
       </div>
       <div class="col-xl-4">
@@ -104,7 +104,7 @@
         Total: {{formatMoney(total())}}
         </div>
         <div ng-show="pane == 'shop'" class="card-footer" style="border: 1px solid rgba(0,0,0,.125); border-top-width: 0px;">
-          <a href="#" class="btn btn-primary" ng-click="pane = 'customize'">Checkout</a>
+          <button href="#" class="btn btn-primary" ng-click="pane = 'customize'" ng-disabled="cart.length == 0">Checkout</button>
         </div>
       </div>
     </div>
@@ -124,7 +124,13 @@
       You should replace the action attribute of the form with the path of
       the URL you want to POST the nonce to (for example, "/process-card")
     -->
-    <form id="nonce-form" novalidate action="REPLACE_ME" method="post">
+    <form name="nonceForm" id="nonce-form" action="REPLACE_ME" method="post">
+      <div class="form-group">
+        <label for="fromEmail">Your email address*</label>
+        <input type="email" class="form-control" id="fromEmail" aria-describedby="emailHelp" placeholder="Enter email" ng-model="fromEmail" required>
+        <small id="emailHelp" class="form-text text-muted">You will recieve your receipt at this address.</small>
+      </div>
+
 
       <!--
         Whenever a nonce is generated, it's assigned as the value of this hidden
@@ -137,8 +143,8 @@
         from the buyer's card information.
       -->
       <br>
-      <a href="#" class="btn btn-secondary" ng-click="pane = 'customize'">Back</a>
-      <a href="#" class="btn btn-success" type="submit" ng-click="requestCardNonce($event)">Confirm Purchase</a>
+      <button href="#" class="btn btn-secondary" ng-click="pane = 'customize'">Back</button>
+      <button href="#" class="btn btn-success" type="submit" ng-click="requestCardNonce($event)" ng-disabled="nonceForm.$invalid">Confirm Purchase</button>
     </form>
   </div>
 </div>

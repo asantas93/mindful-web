@@ -46,6 +46,12 @@ body {
     border-color: #452d1d;
 }
 
+.btn-primary:disabled {
+    color: #fff;
+    background-color: #a8876b;
+    border-color: #a8876b;
+}
+
 .btn-primary.active, .btn-primary:active, .show > .btn-primary.dropdown-toggle {
     color: #fff;
     background-color: #452d1d;

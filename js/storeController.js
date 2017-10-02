@@ -91,12 +91,9 @@ function storeController($scope, $http) {
       // nonce, even if the request failed because of an error.
       cardNonceResponseReceived: function(errors, nonce, cardData) {
         if (errors) {
-          console.log("Encountered errors:");
 
-          // This logs all errors encountered during nonce generation to the
-          // Javascript console.
           errors.forEach(function(error) {
-            console.log('  ' + error.message);
+            alert('Encountered error: ' + error.message);
           });
 
         // No errors occurred. Extract the card nonce.
@@ -104,7 +101,21 @@ function storeController($scope, $http) {
 
           // Delete this line and uncomment the lines below when you're ready
           // to start submitting nonces to your server.
-          alert('Nonce received: ' + nonce);
+          $http({
+            method: 'POST',
+            url: 'http://localhost:9000/order',
+            data: {
+              'nonce': nonce,
+              'orders': $scope.cart,
+              'email': $scope.fromEmail,
+            },
+          }).then(function successCallback(response) {
+            alert('Your order has been processed. Expect an email with your receipt within a few minutes.');
+            window.location.href = 'https://mindfulmassage.biz';
+          }, function failureCallback(response) {
+            alert('There was an error processing your order. Please contact our office so we can fix the problem.\nError:\n' + response.data);
+            window.location.href = 'https://mindfulmassage.biz';
+          });
 
 
           /*
@@ -116,8 +127,6 @@ function storeController($scope, $http) {
             at the bottom of this sample, to correspond to the URL you want to
             submit the nonce to.
           */
-          // document.getElementById('card-nonce').value = nonce;
-          // document.getElementById('nonce-form').submit();
 
         }
       },
