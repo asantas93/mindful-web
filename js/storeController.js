@@ -2,7 +2,7 @@ function storeController($scope, $http) {
   $scope.inventory = [];
   $http({
     method: 'GET',
-    url: 'http://localhost:9000/inventory',
+    url: 'https://api.mindfulmassage.biz:9443/inventory',
   }).then(function successCallback(response) {
     const inventory = response.data
     $scope.inventory = inventory;
@@ -103,11 +103,14 @@ function storeController($scope, $http) {
           // to start submitting nonces to your server.
           $http({
             method: 'POST',
-            url: 'http://localhost:9000/order',
+            url: 'https://api.mindfulmassage.biz:9443/order',
             data: {
               'nonce': nonce,
               'orders': $scope.cart,
               'email': $scope.fromEmail,
+            },
+            headers: {
+              'Content-Type': 'application/json; charset=utf-8'
             },
           }).then(function successCallback(response) {
             alert('Your order has been processed. Expect an email with your receipt within a few minutes.');
