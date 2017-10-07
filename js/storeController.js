@@ -60,7 +60,7 @@ function storeController($scope, $http) {
       return '';
   };
   $scope.data = {};
-  const applicationId = 'sandbox-sq0idp-F-DAUUp0H50hzA-mXBQJAg';
+  const applicationId = 'sq0idp-F-DAUUp0H50hzA-mXBQJAg';
   $scope.paymentForm = new SqPaymentForm({
     applicationId: applicationId,
     inputClass: 'sq-input',
