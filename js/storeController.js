@@ -99,8 +99,7 @@ function storeController($scope, $http) {
         // No errors occurred. Extract the card nonce.
         } else {
 
-          // Delete this line and uncomment the lines below when you're ready
-          // to start submitting nonces to your server.
+          waitingDialog.show('Processing your order');
           $http({
             method: 'POST',
             url: 'https://api.mindfulmassage.biz:9443/order',
@@ -113,6 +112,7 @@ function storeController($scope, $http) {
               'Content-Type': 'application/json; charset=utf-8'
             },
           }).then(function successCallback(response) {
+            waitingDialog.hide();
             alert('Your order has been processed. Expect an email with your receipt within a few minutes.');
             window.location.href = 'https://mindfulmassage.biz';
           }, function failureCallback(response) {
