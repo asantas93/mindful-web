@@ -68,6 +68,11 @@
             <div id="sq-postal-code"></div>
           </div>
         </div>
+        <div class="form-group">
+          <label for="fromEmail">Your email address*</label>
+          <input type="email" class="form-control" id="fromEmail" aria-describedby="emailHelp" placeholder="Enter email" ng-model="fromEmail" required>
+          <small id="emailHelp" class="form-text text-muted">You will recieve your receipt at this address.</small>
+        </div>
       </div>
       <div class="col-xl-4">
         <h5 class="card-header" style="border: 1px solid rgba(0,0,0,.125); border-bottom-width: 0px">
@@ -125,11 +130,6 @@
       the URL you want to POST the nonce to (for example, "/process-card")
     -->
     <form name="nonceForm" id="nonce-form" action="REPLACE_ME" method="post">
-      <div class="form-group">
-        <label for="fromEmail">Your email address*</label>
-        <input type="email" class="form-control" id="fromEmail" aria-describedby="emailHelp" placeholder="Enter email" ng-model="fromEmail" required>
-        <small id="emailHelp" class="form-text text-muted">You will recieve your receipt at this address.</small>
-      </div>
 
 
       <!--

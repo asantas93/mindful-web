@@ -75,7 +75,7 @@ function storeController($scope, $http) {
     },
     cvv: {
       elementId: 'sq-cvv',
-      placeholder: 'CVV'
+      placeholder: 'Enter your CVV code'
     },
     expirationDate: {
       elementId: 'sq-expiration-date',
