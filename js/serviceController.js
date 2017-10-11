@@ -62,6 +62,7 @@ function serviceController($scope) {
     {
       name: 'Ashiatsu (AOBT)',
       desc: 'This barefoot technique provides a deep blanket of pressure that penetrates even the most inward muscle groups. It is powerfully relaxing to both body and mind, useful in stimulating the lymphatic system, and effective in treating chronic muscle tension.',
+      link: 'https://www.groupon.com/articles/ashiatsu-oriental-bar-therapy-fq',
       prices: [
         {duration: '30 minutes', price: '$50'},
         {duration: '45 minutes', price: '$65'},
@@ -127,6 +128,16 @@ function serviceController($scope) {
         {duration: '75 minutes', price: '$95'},
         {duration: '90 minutes', price: '$120'},
         {duration: '2 hour', price: '$160'},
+      ],
+    },
+    {
+      name: 'Reflexology',
+      desc: 'Reflexology is the application of pressure to specific points and areas on the feet, hands, or ears. These reflex points correspond to different body organs and systems. Pressing these points may produce benefits in areas associated with them, and people report feelings of deep relaxation. There is no need to remove clothing for a reflexology treatment.',
+      link: 'https://www.livestrong.com/article/188097-foot-massage-and-benefits-on-brain/',
+      prices: [
+        {duration: '30 minutes', price: '$50'},
+        {duration: '45 minutes', price: '$65'},
+        {duration: '1 hour', price: '$80'},
       ],
     },
     {
