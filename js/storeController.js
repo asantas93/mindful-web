@@ -116,8 +116,8 @@ function storeController($scope, $http) {
             alert('Your order has been processed. Expect an email with your receipt within a few minutes.');
             window.location.href = 'https://mindfulmassage.biz';
           }, function failureCallback(response) {
-            alert('There was an error processing your order. Please contact our office so we can fix the problem.\nError:\n' + response.data);
-            window.location.href = 'https://mindfulmassage.biz';
+            console.log(response);
+            alert('There was an error processing your order. Please contact our office so we can fix the problem.\nError:\n' + JSON.stringify(response.data));
           });
 
 
