@@ -118,6 +118,7 @@ function storeController($scope, $http) {
           }, function failureCallback(response) {
             console.log(response);
             alert('There was an error processing your order. Please contact our office so we can fix the problem.\nError:\n' + JSON.stringify(response.data));
+            waitingDialog.hide();
           });
 
 
