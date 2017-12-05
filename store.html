@@ -43,8 +43,17 @@
                 </div>
                 <div class="form-group">
                   <label for="toEmail{{$index}}">Recipient email address*</label>
-                  <input type="email" class="form-control" id="toEmail{{$index}}" aria-describedby="emailHelp" placeholder="Enter email" ng-model="order.toEmail" required>
-                  <small id="emailHelp" class="form-text text-muted">Enter your own if you would like to deliver the gift yourself.</small>
+                  <input type="email" class="form-control" id="toEmail{{$index}}" aria-describedby="toEmailHelp" placeholder="Enter email" ng-model="order.toEmail" required>
+                  <small id="toEmailHelp" class="form-text text-muted">Enter your own if you would like to deliver the gift yourself.</small>
+                </div>
+                <div class="form-group">
+                  <label for="tip{{$index}}">Optional tip</label>
+                  <div class="input-group">
+                  <span class="input-group-addon">$</span>
+                  <input type="number" class="form-control" id="tip{{$index}}" aria-describedby="tipHelp" value="0" min="0" onkeypress="return event.charCode >= 48 && event.charCode <= 57" ng-model="order.tip">
+                  <span class="input-group-addon">.00</span>
+                  </div>
+                  <small id="tipHelp" class="form-text text-muted">If a tip is added, the gift recipient will see that a tip was left on their behalf but not the amount. Tips are appreciated but not expected.</small>
                 </div>
                 <div class="form-group">
                   <label for="giftMessage{{$index}}">Gift Message</label>
@@ -99,8 +108,8 @@
                   <small class="text-muted">couples</small>
                 </label>
               </div>
-              </form>
-            <small class="text-muted">{{formatMoney(orderPrice(order))}} each</small>
+            </form>
+            <small class="text-muted">{{formatMoney(orderPrice(order))}}{{tipText(order)}} each</small>
             <small class="text-muted" ng-show="order.couples"> ($10 charge for same room)</small>
           </li>
           </ul>

@@ -46,9 +46,9 @@ function storeController($scope, $http) {
   };
   $scope.orderPrice = function(order) {
     if (order.couples)
-      return order.disp.variation.price * 2 + 1000;
+      return order.disp.variation.price * 2 + 1000 + (order.tip || 0) * 100;
     else
-      return order.disp.variation.price;
+      return order.disp.variation.price + (order.tip || 0) * 100;
   };
   $scope.formatMoney = function(price) {
     return '$' + (price / 100.0).toFixed(2);
@@ -58,6 +58,14 @@ function storeController($scope, $http) {
       return ' (couples)';
     else
       return '';
+  };
+  $scope.tipText = function(order) {
+    if (order.tip > 0) {
+      console.log($scope.cart);
+      return ' + ' + $scope.formatMoney((order.tip || 0) * 100) + ' tip';
+    } else {
+      return '';
+    }
   };
   $scope.data = {};
   const applicationId = 'sq0idp-F-DAUUp0H50hzA-mXBQJAg';
