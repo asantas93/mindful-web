@@ -38,6 +38,7 @@
     <script src="js/serviceController.js"></script>
     <script src="js/indexController.js"></script>
     <script src="js/storeController.js"></script>
+    <script src="js/galleryController.js"></script>
     <script src="js/waitingDialog.js"></script>
 
     <meta name="keywords" content="massage, massage therapy, bodywork, valdosta massage and bodywork, spas in georgia, massage therapy in south georgia, bodywork in valdosta, mindful massage in valdosta, day spa valdosta, spas in atlanta, day spas atlanta, day spa valdosta georgia, day spas in valdosta, valdosta spa, spas in valdosta, valdosta day spas, spa + valdosta">
@@ -73,6 +74,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="#" ng-click="navItemClick('Store')">Store</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" ng-click="navItemClick('Gallery')">Gallery</a>
+              </li>
             </ul>
           </div>
         </div>
@@ -94,6 +98,7 @@
       <div ng-include="'services.html'" ng-show="active == 'Services'"></div>
       <div ng-include="'contact.html'" ng-show="active == 'Contact'"></div>
       <div ng-include="'store.html'" ng-show="active == 'Store'"></div>
+      <div ng-include="'gallery.html'" ng-show="active == 'Gallery'"></div>
 
       <br>
 
