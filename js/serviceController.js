@@ -37,6 +37,20 @@ function serviceController($scope) {
       ],
     },
     {
+      name: 'Ashiatsu (AOBT)',
+      desc: 'This barefoot technique provides a deep blanket of pressure that penetrates even the most inward muscle groups. It is powerfully relaxing to both body and mind, useful in stimulating the lymphatic system, and effective in treating chronic muscle tension.',
+      link: 'https://www.groupon.com/articles/ashiatsu-oriental-bar-therapy-fq',
+      video: 'https://www.youtube.com/watch?v=2Uv1h3ihewg&list=PLEuPMZBiF7KnGiJgPZnZfcQE3wgyyQ-7R',
+      prices: [
+        {duration: '30 minutes', price: '$50'},
+        {duration: '45 minutes', price: '$65'},
+        {duration: '1 hour', price: '$80'},
+        {duration: '75 minutes', price: '$95'},
+        {duration: '90 minutes', price: '$120'},
+        {duration: '2 hour', price: '$160'},
+      ],
+    },
+    {
       name: 'Sports Massage',
       desc: 'For muscle discomfort associated with hard workouts, this technique benefits muscles by warming and softening tissue, realigning muscle fibers, helping to heal scar tissue, and flushing metabolic waste from specific muscles.',
       prices: [
@@ -55,19 +69,6 @@ function serviceController($scope) {
         {duration: '45 minutes', price: '$70'},
         {duration: '1 hour', price: '$85'},
         {duration: '75 minutes', price: '$100'},
-        {duration: '90 minutes', price: '$120'},
-        {duration: '2 hour', price: '$160'},
-      ],
-    },
-    {
-      name: 'Ashiatsu (AOBT)',
-      desc: 'This barefoot technique provides a deep blanket of pressure that penetrates even the most inward muscle groups. It is powerfully relaxing to both body and mind, useful in stimulating the lymphatic system, and effective in treating chronic muscle tension.',
-      link: 'https://www.groupon.com/articles/ashiatsu-oriental-bar-therapy-fq',
-      prices: [
-        {duration: '30 minutes', price: '$50'},
-        {duration: '45 minutes', price: '$65'},
-        {duration: '1 hour', price: '$80'},
-        {duration: '75 minutes', price: '$95'},
         {duration: '90 minutes', price: '$120'},
         {duration: '2 hour', price: '$160'},
       ],
@@ -141,8 +142,16 @@ function serviceController($scope) {
       ],
     },
     {
+      name: 'Reiki',
+      desc: 'Reiki is a gentle complementary therapy which through a series of still, light-to-no touch holds enhances energetic flow throughout the body. Reiki should not be used as the sole treatment to a condition needing medical attention but can be a great facilitator to the body’s own natural healing processes as well as a tool in regaining a feeling of peace and balance.',
+    },
+    {
       name: 'Body Exfoliation',
       desc: 'Salt glow treatment uses sea salts combined with oils to exfoliate your skin. By removing old cells, your skin has a vibrant appearance and is smooth and hydrated.',
+      prices: [
+        {duration: 'Standalone', price: '$50'},
+        {duration: 'Add to massage', price: '$35'},
+      ],
     },
   ]
 }

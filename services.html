@@ -9,6 +9,7 @@
         </div>
         <div class="card-footer" ng-show="service.link || service.prices">
           <a ng-show="service.link" ng-href="{{service.link}}" target="_blank" class="btn btn-sm btn-primary">Learn More</a>
+          <a ng-show="service.video" ng-href="{{service.video}}" target="_blank" class="btn btn-sm btn-info">Watch Video</a>
           <button class="btn btn-sm btn-secondary" type="button" data-toggle="collapse" data-target="#collapse-{{$index}}" aria-expanded="false" aria-controls="collapse-{{$index}}">
             View Prices
           </button>
