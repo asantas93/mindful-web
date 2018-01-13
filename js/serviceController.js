@@ -144,6 +144,14 @@ function serviceController($scope) {
     {
       name: 'Reiki',
       desc: 'Reiki is a gentle complementary therapy which through a series of still, light-to-no touch holds enhances energetic flow throughout the body. Reiki should not be used as the sole treatment to a condition needing medical attention but can be a great facilitator to the body’s own natural healing processes as well as a tool in regaining a feeling of peace and balance.',
+      prices: [
+        {duration: '30 minutes', price: '$40'},
+        {duration: '45 minutes', price: '$55'},
+        {duration: '1 hour', price: '$70'},
+        {duration: '75 minutes', price: '$85'},
+        {duration: '90 minutes', price: '$100'},
+        {duration: '2 hour', price: '$140'},
+      ],
     },
     {
       name: 'Body Exfoliation',
