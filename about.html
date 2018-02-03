@@ -20,7 +20,45 @@
   <div class="row">
     <div class="col-lg-3 mb-5" ng-repeat="st in staff">
       <div class="card h-100 text-center">
-        <img class="card-img-top" ng-src="{{st.img}}" alt="">
+        <input type="image" class="card-img-top" ng-src="{{st.img}}" alt="" data-toggle="modal" data-target="#bio-modal-{{$index}}">
+        <div class="modal fade" id="bio-modal-{{$index}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg" style="text-align: left;" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">{{st.name}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-md-4">
+                    <img ng-src="{{st.img}}">
+                  </div>
+                  <div class="col-md-8">
+                    <div ng-show="st.education">
+                      Education:
+                      <div ng-repeat="e in st.education"> - {{e}}</div>
+                      <br>
+                    </div>
+                    <div ng-show="st.discounts">
+                      $10 off 1 hour or longer massages for:
+                      <div ng-repeat="d in st.discounts"> - {{d}}</div>
+                      <br>
+                    </div>
+                    <div ng-show="st.license">
+                      License Number: {{st.license}}
+                      <br>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <p>{{st.bio}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="card-body" style="padding: 9px">
           <h4 class="card-title">{{st.name}}</h4>
           <h6 class="card-subtitle mb-2 text-muted">{{st.edu}}</h6>
