@@ -25,6 +25,10 @@ function serviceController($scope) {
       ],
     },
     {
+      name: 'Couples Massage',
+      desc: 'Receive your therapeutic massages together in the same room with two therapists. Please call the office to schedule. The massages must be at least an hour and a 50% deposit is required at time of booking. Price per person is the price of the type of massage plus $5 setup fee.',
+    },
+    {
       name: 'Prenatal Massage',
       desc: 'Addresses muscular tension associated with the changes in the body during the second and third trimester of pregnancy.',
       prices: [
