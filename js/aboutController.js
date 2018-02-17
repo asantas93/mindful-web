@@ -69,7 +69,26 @@ function aboutController($scope) {
       name: 'Iain Searcy',
       img: 'img/therapist/iain.jpg',
       edu: 'LMT',
+      education: ['LMT Florida School of Massage 2015'],
+      discounts: ['Teachers'],
+      bio: 'I love exploring how the layers of muscles coincide and relate to the overall issue. I work with breathing and awareness of the pressure points. I find this speeds up the progress of a session. Growing up with therapist parents and friends gave me a lot of experience receiving different kinds of work though out the years. This helped me find what I liked in a good massage and how to incorporate it into my work. I love what I do and hope you will too.',
       license: 'MT011757'
+    },
+    {
+      name: 'Patricia Hodge',
+      img: 'img/therapist/patriciah.jpg',
+      edu: 'Masters, LMT',
+      education: ['Masters Long Island University 2001', 'LMT Pacific College of Oriental Medicine'],
+      discounts: ['Seniors'],
+      bio: 'My endeavor is to give each client a comforting and soothing experience that will enhance their mental and physical well being. One that aids in helping them improve their quality of life by providing relief from physical discomfort and everyday stress. My overall goal within the field is to continue growing, continue learning and to continue the joy of giving, into the world of massage just as much as those who enjoy the receiving. I want to extend a warm thank you to each and everyone that place their trust into my ability and expertise.',
+    },
+    {
+      name: 'Brey Littleton',
+      img: 'img/therapist/brey.jpg',
+      edu: 'LMT',
+      education: ['LMT Center for Massage and Natural Health 2017'],
+      discounts: ['Students', 'Teachers'],
+      bio: 'As a massage and bodywork therapist I want to create an experience for people that will allow them to sink more deeply into the present and begin to understand health by listening to the body itself. By offering a service that promotes a better relationship to form between mind and body I hope to act as a bridge for people to help them connect to their own sense of balance. I want to be able to help people become more aware of their \'vital energy\' so they can access more of their potential and experience greater wholeness and well-being.',
     },
   ];
 }
