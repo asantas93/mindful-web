@@ -37,7 +37,7 @@ function aboutController($scope) {
       name: 'Stephen O\'Haire',
       img: 'img/therapist/stephen.jpg',
       edu: 'BA, LMT',
-      education: ['LMT Florida School of Massage 2008', 'BA Exercise Physiology VSU 2005'],
+      education: ['LMT Florida School of Massage 2008', 'BA Exercise Physiology VSU 2015'],
       discounts: ['Students', 'Teachers'],
       bio: 'I found interest in massage therapy after an auto accident in 2004 left me with a serious lower back injury. I found that massage not only aleviated my back pain, but also left me with a general sense of happiness and ease long after receiving the bodywork. I try to pass the same benefits on to each client I see. I believe massage is a tool that can be used to promote numerous health benefits as well as universally elevate the overall quality of life of it\'s recipients.',
       license: 'MT005597'
@@ -71,7 +71,7 @@ function aboutController($scope) {
       edu: 'LMT',
       education: ['LMT Florida School of Massage 2015'],
       discounts: ['Teachers'],
-      bio: 'I love exploring how the layers of muscles coincide and relate to the overall issue. I work with breathing and awareness of the pressure points. I find this speeds up the progress of a session. Growing up with therapist parents and friends gave me a lot of experience receiving different kinds of work though out the years. This helped me find what I liked in a good massage and how to incorporate it into my work. I love what I do and hope you will too.',
+      bio: 'I love exploring how the layers of muscles coincide and relate to the overall issue. I work with breathing and awareness of the pressure points. I find this speeds up the progress of a session. Growing up with therapist parents and friends gave me a lot of experience receiving different kinds of work throughout the years. This helped me find what I liked in a good massage and how to incorporate it into my work. I love what I do and hope you will too.',
       license: 'MT011757'
     },
     {
