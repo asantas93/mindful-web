@@ -44,7 +44,9 @@ function aboutController($scope) {
     },
     {
       name: 'Alethea Santas',
+      firstName: 'Alethea',
       img: 'img/therapist/alethea.jpg',
+      mmfl: true,
       edu: 'BFA, LMT',
       education: ['BFA Valdosta State University 2003', 'Master Cosmetologist Paul Mitchell the School 2004', 'LMT Florida School of Massage 2015'],
       discounts: ['Students', 'Teachers', 'Seniors (70+ years)', 'Disabled/Handicapped', 'Nurses'],
@@ -67,8 +69,10 @@ function aboutController($scope) {
     },
     {
       name: 'Iain Searcy',
+      firstName: 'Iain',
       img: 'img/therapist/iain.jpg',
       edu: 'LMT',
+      mmfl: true,
       education: ['LMT Florida School of Massage 2015'],
       discounts: ['Teachers'],
       bio: 'I love exploring how the layers of muscles coincide and relate to the overall issue. I work with breathing and awareness of the pressure points. I find this speeds up the progress of a session. Growing up with therapist parents and friends gave me a lot of experience receiving different kinds of work throughout the years. This helped me find what I liked in a good massage and how to incorporate it into my work. I love what I do and hope you will too.',

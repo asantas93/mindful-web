@@ -36,18 +36,18 @@
                     <img ng-src="{{st.img}}">
                   </div>
                   <div class="col-md-8">
-                    <div ng-show="st.education">
+                    <div ng-if="st.education">
                       <h4>Education</h4>
                       <div ng-repeat="e in st.education"> - {{e}}</div>
                       <br>
                     </div>
-                    <div ng-show="st.discounts">
+                    <div ng-if="st.discounts">
                       <h4>Discounts</h4>
                       $10 off 1 hour+ massages for
                       <div ng-repeat="d in st.discounts"> - {{d}}</div>
                       <br>
                     </div>
-                    <div ng-show="st.license">
+                    <div ng-if="st.license">
                       <h5>License Number</h5>
                       {{st.license}}
                       <br>
@@ -57,6 +57,9 @@
               </div>
               <div class="modal-footer">
                 <p>{{st.bio}}</p>
+              </div>
+              <div ng-if="st.mmfl == true" class="modal-footer" style="justify-content: flex-start;">
+                <p>{{st.firstName}} also massages at <a href="http://mindfulmassagefl.com" target="_blank">Little House on the Island</a>, our St. Augustine location.</p>
               </div>
             </div>
           </div>
