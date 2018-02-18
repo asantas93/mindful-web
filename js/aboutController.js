@@ -77,10 +77,11 @@ function aboutController($scope) {
     {
       name: 'Patricia Hodge',
       img: 'img/therapist/patriciah.jpg',
-      edu: 'Masters, LMT',
-      education: ['Masters Long Island University 2001', 'LMT Pacific College of Oriental Medicine'],
+      edu: 'MS, LMT',
+      education: ['MS Counseling Long Island University 2001', 'LMT Pacific College of Oriental Medicine'],
       discounts: ['Seniors'],
       bio: 'My endeavor is to give each client a comforting and soothing experience that will enhance their mental and physical well being. One that aids in helping them improve their quality of life by providing relief from physical discomfort and everyday stress. My overall goal within the field is to continue growing, continue learning and to continue the joy of giving, into the world of massage just as much as those who enjoy the receiving. I want to extend a warm thank you to each and everyone that place their trust into my ability and expertise.',
+      license: 'MT007387'
     },
     {
       name: 'Brey Littleton',
