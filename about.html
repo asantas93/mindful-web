@@ -25,7 +25,7 @@
           <div class="modal-dialog modal-lg" style="text-align: left;" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">{{st.name}}</h5>
+                <h3 class="modal-title" id="exampleModalLabel">{{st.name}}</h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -37,17 +37,19 @@
                   </div>
                   <div class="col-md-8">
                     <div ng-show="st.education">
-                      Education:
+                      <h4>Education</h4>
                       <div ng-repeat="e in st.education"> - {{e}}</div>
                       <br>
                     </div>
                     <div ng-show="st.discounts">
-                      $10 off 1 hour or longer massages for:
+                      <h4>Discounts</h4>
+                      $10 off 1 hour+ massages for
                       <div ng-repeat="d in st.discounts"> - {{d}}</div>
                       <br>
                     </div>
                     <div ng-show="st.license">
-                      License Number: {{st.license}}
+                      <h5>License Number</h5>
+                      {{st.license}}
                       <br>
                     </div>
                   </div>
