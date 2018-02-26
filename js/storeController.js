@@ -1,8 +1,11 @@
 function storeController($scope, $http) {
   $scope.inventory = [];
+  const api = location.hostname == 'localhost' ?
+    'https://localhost:9443' :
+    'https://api.mindfulmassage.biz:9443'
   $http({
     method: 'GET',
-    url: 'https://api.mindfulmassage.biz:9443/inventory',
+    url: api + '/inventory',
   }).then(function successCallback(response) {
     const inventory = response.data
     $scope.inventory = inventory;
@@ -13,7 +16,7 @@ function storeController($scope, $http) {
   $scope.total = function() {
     var tot = 0.0;
     $scope.cart.forEach(function(order) {
-      tot += $scope.orderPrice(order) * order.quantity;
+      tot += ($scope.orderPrice(order) + (order.tip || 0) * 100) * order.quantity;
     });
     return tot;
   };
@@ -27,12 +30,20 @@ function storeController($scope, $http) {
       toName: null,
       toEmail: null,
       giftMessage: null,
-      couples: false,
       disp: { // Not to be consumed server-side
         item: item,
         variation: variation,
+        modifiers: item.modifiers,
       },
+      modifiers: [],
     });
+  };
+  $scope.toggleModifier = function(order, id) {
+    var index = order.modifiers.indexOf(id)
+    if (index != -1)
+      order.modifiers.splice(index, 1);
+    else
+      order.modifiers.push(id);
   };
   $scope.quantityMinus = function(i) {
     $scope.cart[i].quantity--;
@@ -41,27 +52,23 @@ function storeController($scope, $http) {
     }
   };
   $scope.quantityPlus = function(i) {
-    console.log($scope.cart[i]);
     $scope.cart[i].quantity++;
   };
   $scope.orderPrice = function(order) {
-    if (order.couples)
-      return order.disp.variation.price * 2 + 1000 + (order.tip || 0) * 100;
-    else
-      return order.disp.variation.price + (order.tip || 0) * 100;
+    var unitPrice = order.disp.variation.price;
+    order.disp.modifiers.forEach(function(modlist) {
+      modlist.modifiers.forEach(function(mod) {
+        if (order.modifiers.indexOf(mod.id) != -1)
+          unitPrice += mod.price;
+      });
+    });
+    return unitPrice;
   };
   $scope.formatMoney = function(price) {
     return '$' + (price / 100.0).toFixed(2);
   };
-  $scope.couplesSuffix = function(order) {
-    if (order.couples)
-      return ' (couples)';
-    else
-      return '';
-  };
   $scope.tipText = function(order) {
     if (order.tip > 0) {
-      console.log($scope.cart);
       return ' + ' + $scope.formatMoney((order.tip || 0) * 100) + ' tip';
     } else {
       return '';
@@ -110,7 +117,7 @@ function storeController($scope, $http) {
           waitingDialog.show('Processing your order');
           $http({
             method: 'POST',
-            url: 'https://api.mindfulmassage.biz:9443/order',
+            url: api + '/order',
             data: {
               'nonce': nonce,
               'orders': $scope.cart,

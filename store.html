@@ -27,7 +27,7 @@
       <div ng-show="pane == 'customize'" class="col-lg-8">
         <form name="giftForm">
           <div class="card" ng-repeat="order in cart">
-            <h5 class="card-header">(x{{order.quantity}}) {{order.disp.variation.name}} {{order.disp.item.name}}{{couplesSuffix(order)}}</h5>
+            <h5 class="card-header">(x{{order.quantity}}) {{order.disp.variation.name}} {{order.disp.item.name}}</h5>
             <div class="card-body">
                 <div class="form-group row">
                   <label for="from-name-{{$index}}" class="col-2 col-form-label">From*</label>
@@ -53,7 +53,9 @@
                   <input type="number" class="form-control" id="tip{{$index}}" aria-describedby="tipHelp" value="0" min="0" onkeypress="return event.charCode >= 48 && event.charCode <= 57" ng-model="order.tip">
                   <span class="input-group-addon">.00</span>
                   </div>
-                  <small id="tipHelp" class="form-text text-muted">If a tip is added, the gift recipient will see that a tip was left on their behalf but not the amount. Tips are appreciated but not expected.</small>
+                  <small id="tipHelp" class="form-text text-muted">
+                    <span>If a tip is added, the gift recipient will see that a tip was left on their behalf but not the amount. Tips are appreciated but not expected.</span>
+                  </small>
                 </div>
                 <div class="form-group">
                   <label for="giftMessage{{$index}}">Gift Message</label>
@@ -96,21 +98,16 @@
             <button type="button" class="btn btn-danger btn-sm float-right" ng-click="quantityMinus($index)"> - </button>
             <br>
             <form>
-              <div class="form-check form-check-inline mb-sm-0">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1-{{index}}" ng-click="order.couples = false;" checked="">
-                  <small class="text-muted">individual</small>
-                </label>
-              </div>
-              <div class="form-check form-check-inline mb-sm-0">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2-{{index}}" ng-click="order.couples = true;">
-                  <small class="text-muted">couples</small>
-                </label>
+              <div ng-repeat="modlist in order.disp.modifiers">
+                <div ng-repeat="mod in modlist.modifiers" class="form-check form-check-inline mb-sm-0">
+                  <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" name="inlineRadioOptions" id="inlineRadio1-{{index}}" ng-click="toggleModifier(order, mod.id);">
+                    <small class="text-muted">{{mod.name}} +{{formatMoney(mod.price)}}</small>
+                  </label>
+                </div>
               </div>
             </form>
             <small class="text-muted">{{formatMoney(orderPrice(order))}}{{tipText(order)}} each</small>
-            <small class="text-muted" ng-show="order.couples"> ($10 charge for same room)</small>
           </li>
           </ul>
         </div>
