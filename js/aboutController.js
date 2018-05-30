@@ -5,8 +5,8 @@ function aboutController($scope) {
       img: 'img/therapist/patricia.jpg',
       edu: 'BA, LMT, Owner',
       education: ['BA VSU 2000', 'LMT Core Institute 2002'],
-      discount: '$10',
-      discounts: ['Teachers', 'Nurses', 'Seniors (70+ years)', 'Military'],
+      discount: '$15',
+      discounts: ['Seniors (80+ years)'],
       bio: 'My approach to massage therapy works with an understanding of western anatomy and physiology and grounded in the eastern tradition of mindfulness. My passion for massage therapy grew out of my personal experience with generalized anxiety and panic attacks. Massage to the scalp created grounding and at thirteen years old I understood at a core level the benefits of touch. I work to facilitate soft tissue balance in the body along with clear mind and open heart.',
       license: 'MT001891'
     },
