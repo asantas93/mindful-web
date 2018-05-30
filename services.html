@@ -1,9 +1,11 @@
 <div class="container" ng-controller="serviceController">
-  <img class="img-fluid rounded mb-4" src="img/services.jpg" alt="">
   <div class="row">
     <div class="col-lg-6 mb-4" ng-repeat="service in services">
       <div class="card h-100">
         <h5 class="card-header">{{service.name}}</h5>
+        <div class="card-body" style="padding-bottom:0;" ng-if="service.img">
+          <img class="img-thumbnail" style="padding: 0;" src="/img/massage/{{service.img}}.jpg"/>
+        </div>
         <div class="card-body">
           <p class="card-text">{{service.desc}}</p>
         </div>

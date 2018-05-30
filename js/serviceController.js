@@ -3,6 +3,7 @@ function serviceController($scope) {
     {
       name: 'Swedish Massage',
       desc: 'Combines effleurage, kneading, and friction on the surface of the muscles with assisted movements of the joints. It relaxes the mind and body, warms up and flushes metabolic waste from the muscles, and improves circulation and range of motion.',
+      img: 'swedish',
       prices: [
         {duration: '30 minutes', price: '$45'},
         {duration: '45 minutes', price: '$60'},
@@ -15,6 +16,7 @@ function serviceController($scope) {
     {
       name: 'Deep Tissue Massage',
       desc: 'Addresses the deeper layers of the tissues by using slow strokes and deep hand pressure on tight areas. It releases patterns of tension in the muscles and restores suppleness and strength.',
+      img: 'deeptissue',
       prices: [
         {duration: '30 minutes', price: '$45'},
         {duration: '45 minutes', price: '$60'},
@@ -43,6 +45,7 @@ function serviceController($scope) {
     {
       name: 'Ashiatsu (AOBT)',
       desc: 'This barefoot technique provides a deep blanket of pressure that penetrates even the most inward muscle groups. It is powerfully relaxing to both body and mind, useful in stimulating the lymphatic system, and effective in treating chronic muscle tension.',
+      img: 'ashi',
       link: 'https://www.groupon.com/articles/ashiatsu-oriental-bar-therapy-fq',
       video: 'https://www.youtube.com/watch?v=2Uv1h3ihewg&list=PLEuPMZBiF7KnGiJgPZnZfcQE3wgyyQ-7R',
       prices: [
@@ -55,8 +58,9 @@ function serviceController($scope) {
       ],
     },
     {
-      name: 'Sports Massage',
-      desc: 'For muscle discomfort associated with hard workouts, this technique benefits muscles by warming and softening tissue, realigning muscle fibers, helping to heal scar tissue, and flushing metabolic waste from specific muscles.',
+      name: 'CORE Myofascial Therapy',
+      desc: 'CORE Myofascial Therapy utilizes deep and systematic strokes to spread and stretch connective tissue, or fascia, in which stress, adhesions and painful tension are held. Ideal for chronic pain, sports enhancement and remediation, and for addressing issues related to postural dysfunction.',
+      img: 'core',
       prices: [
         {duration: '30 minutes', price: '$55'},
         {duration: '45 minutes', price: '$70'},
@@ -78,20 +82,19 @@ function serviceController($scope) {
       ],
     },
     {
-      name: 'CORE Myofascial Therapy',
-      desc: 'CORE Myofascial Therapy utilizes deep and systematic strokes to spread and stretch connective tissue, or fascia, in which stress, adhesions and painful tension are held. Ideal for chronic pain, sports enhancement and remediation, and for addressing issues related to postural dysfunction.',
+      name: 'Reflexology',
+      desc: 'Reflexology is the application of pressure to specific points and areas on the feet, hands, or ears. These reflex points correspond to different body organs and systems. Pressing these points may produce benefits in areas associated with them, and people report feelings of deep relaxation. There is no need to remove clothing for a reflexology treatment.',
+      link: 'https://www.livestrong.com/article/188097-foot-massage-and-benefits-on-brain/',
       prices: [
         {duration: '30 minutes', price: '$55'},
         {duration: '45 minutes', price: '$70'},
         {duration: '1 hour', price: '$85'},
-        {duration: '75 minutes', price: '$100'},
-        {duration: '90 minutes', price: '$125'},
-        {duration: '2 hour', price: '$165'},
       ],
     },
     {
       name: 'Thai Assisted Yoga Massage',
       desc: 'Thai Assisted Yoga Massage utilizes slow and deep compressions and stretches to improve posture, relieve myofascial pain, and restore balance and strength. The work can either be done on a mat with the client wearing loose clothing, or incorporated into a traditional table routine.',
+      img: 'thai',
       prices: [
         {duration: '30 minutes', price: '$55'},
         {duration: '45 minutes', price: '$70'},
@@ -102,9 +105,9 @@ function serviceController($scope) {
       ],
     },
     {
-      name: 'Neuromuscular Therapy',
-      desc: 'Neuromuscular Therapy (NMT) is a modern, logical system of massage which utilizes static pressure on specific myofascial points to relieve painful areas. This technique manipulates the soft tissue to bring balance to the body and nervous system.',
-      link: 'https://nmtcenter.com/description/',
+      name: 'Sports Massage',
+      desc: 'For muscle discomfort associated with hard workouts, this technique benefits muscles by warming and softening tissue, realigning muscle fibers, helping to heal scar tissue, and flushing metabolic waste from specific muscles.',
+      img: 'sports',
       prices: [
         {duration: '30 minutes', price: '$55'},
         {duration: '45 minutes', price: '$70'},
@@ -118,8 +121,23 @@ function serviceController($scope) {
       name: 'TMJ Massage',
       desc: 'Applied to treat dysfunctions associated with temperomandibular joint disorders. Massage techniques are administered externally and intraorally. Intraoral massage is done with gloved hands by a therapist trained in this technique',
       link: 'http://www.massagetherapyschoolsinformation.com/tmj-dysfunction-mouth-massage/',
+      img: 'tmj',
       prices: [
         {duration: '30 minutes', price: '$55'},
+      ],
+    },
+    {
+      name: 'Neuromuscular Therapy',
+      desc: 'Neuromuscular Therapy (NMT) is a modern, logical system of massage which utilizes static pressure on specific myofascial points to relieve painful areas. This technique manipulates the soft tissue to bring balance to the body and nervous system.',
+      img: 'neuromuscular',
+      link: 'https://nmtcenter.com/description/',
+      prices: [
+        {duration: '30 minutes', price: '$55'},
+        {duration: '45 minutes', price: '$70'},
+        {duration: '1 hour', price: '$85'},
+        {duration: '75 minutes', price: '$100'},
+        {duration: '90 minutes', price: '$125'},
+        {duration: '2 hour', price: '$165'},
       ],
     },
     {
@@ -133,16 +151,6 @@ function serviceController($scope) {
         {duration: '75 minutes', price: '$100'},
         {duration: '90 minutes', price: '$125'},
         {duration: '2 hour', price: '$165'},
-      ],
-    },
-    {
-      name: 'Reflexology',
-      desc: 'Reflexology is the application of pressure to specific points and areas on the feet, hands, or ears. These reflex points correspond to different body organs and systems. Pressing these points may produce benefits in areas associated with them, and people report feelings of deep relaxation. There is no need to remove clothing for a reflexology treatment.',
-      link: 'https://www.livestrong.com/article/188097-foot-massage-and-benefits-on-brain/',
-      prices: [
-        {duration: '30 minutes', price: '$55'},
-        {duration: '45 minutes', price: '$70'},
-        {duration: '1 hour', price: '$85'},
       ],
     },
     {
