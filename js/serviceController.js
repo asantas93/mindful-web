@@ -166,6 +166,16 @@ function serviceController($scope) {
       ],
     },
     {
+      name: 'Manual Lymphatic Drainage',
+      desc: 'Manual Lymphatic Drainage, (MLD) is a gentle massage technique that works to encourage the natural movement of lymph fluid and promote relaxation. MLD is recommended for lymphedema (post-surgical and post-traumatic), detoxification, arthritis, chronic pain, and other illnesses.',
+      prices: [
+        {duration: '1 hour', price: '$85'},
+        {duration: '75 minutes', price: '$100'},
+        {duration: '90 minutes', price: '$125'},
+        {duration: '2 hour', price: '$165'},
+      ],
+    },
+    {
       name: 'Body Exfoliation',
       desc: 'Salt glow treatment uses sea salts combined with oils to exfoliate your skin. By removing old cells, your skin has a vibrant appearance and is smooth and hydrated.',
       prices: [
