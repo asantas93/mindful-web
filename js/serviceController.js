@@ -168,6 +168,7 @@ function serviceController($scope) {
     {
       name: 'Manual Lymphatic Drainage',
       desc: 'Manual Lymphatic Drainage, (MLD) is a gentle massage technique that works to encourage the natural movement of lymph fluid and promote relaxation. MLD is recommended for lymphedema (post-surgical and post-traumatic), detoxification, arthritis, chronic pain, and other illnesses.',
+      link: 'https://www.massagetherapy.com/articles/benefits-lymphatic-massage',
       prices: [
         {duration: '1 hour', price: '$85'},
         {duration: '75 minutes', price: '$100'},
