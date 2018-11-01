@@ -21,12 +21,6 @@ function aboutController($scope) {
       license: 'MT002654'
     },
     {
-      name: 'Alfreda Cochran',
-      img: 'img/therapist/freda.jpg',
-      edu: 'LMT',
-      license: 'MT001470'
-    },
-    {
       name: 'Lee McKinney',
       img: 'img/therapist/lee.jpg',
       edu: 'LMT',
