@@ -1,5 +1,5 @@
 function indexController($scope) {
-  if (location.hostname != 'localhost' && location.protocol != 'https:') {
+  if (location.hostname !== 'localhost' && location.protocol !== 'https:') {
     location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
   }
   $scope.navItemClick = function(item) {
