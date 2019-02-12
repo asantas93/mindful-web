@@ -85,5 +85,25 @@ function aboutController($scope) {
       bio: 'My endeavor is to give each client a comforting and soothing experience that will enhance their mental and physical well being. One that aids in helping them improve their quality of life by providing relief from physical discomfort and everyday stress. My overall goal within the field is to continue growing, continue learning and to continue the joy of giving, into the world of massage just as much as those who enjoy the receiving. I want to extend a warm thank you to each and everyone that place their trust into my ability and expertise.',
       license: 'MT007387'
     },
+    {
+      name: 'Carrie Carter',
+      img: 'img/therapist/carrie.jpg',
+      edu: 'AS, LMT',
+      education: ['Diploma of Neuromuscular Massage Therapy Southern Regional Technical College 2016', 'AS Business Management SRTC 2014'],
+      discount: '10$',
+      discounts: ['Military'],
+      bio: 'Massage has been a healing tool in my life. I hope to provide healing and comfort to my clients with a theraputic and caring touch.',
+      license: 'MT011241'
+    },
+    {
+      name: 'Candi Barry',
+      img: 'img/therapist/candi.jpg',
+      edu: 'AS, LMT',
+      education: ['Diploma of Neuromuscular Massage Therapy Wiregrass Georgia Technical College 2017', 'AS Business Management Middle Georgia State University 2005'],
+      discount: '5$',
+      discounts: ['Nurses', 'Teachers'],
+      bio: 'My goal is to help people experience the many benefits of regular massage--from pain management to stress relief, with each massage personalized for that client\'s individual needs. I continue to learn new techniques and enjoy blending them together to better help my clients. I look forward to meeting you and working with you to achieve your wellness goals!',
+      license: 'MT011986'
+    },
   ];
 }
