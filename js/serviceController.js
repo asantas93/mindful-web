@@ -176,13 +176,5 @@ function serviceController($scope) {
         {duration: '2 hour', price: '$165'},
       ],
     },
-    {
-      name: 'Body Exfoliation',
-      desc: 'Salt glow treatment uses sea salts combined with oils to exfoliate your skin. By removing old cells, your skin has a vibrant appearance and is smooth and hydrated.',
-      prices: [
-        {duration: 'Standalone', price: '$55'},
-        {duration: 'Add to massage', price: '$40'},
-      ],
-    },
   ]
 }
