@@ -37,7 +37,7 @@ function aboutController($scope) {
       license: 'MT005597'
     },
     {
-      name: 'Alethea Santas',
+      name: 'Alethea Searcy',
       firstName: 'Alethea',
       img: 'img/therapist/alethea.jpg',
       mmfl: true,
