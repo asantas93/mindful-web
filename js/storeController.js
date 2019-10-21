@@ -1,8 +1,6 @@
 function storeController($scope, $http) {
   $scope.inventory = [];
-  const api = location.hostname == 'localhost' ?
-    'https://localhost:9443' :
-    'https://api.mindfulmassage.biz:9443'
+  const api = 'https://7hf12oxl9k.execute-api.us-east-1.amazonaws.com/Prod'
   $http({
     method: 'GET',
     url: api + '/inventory',

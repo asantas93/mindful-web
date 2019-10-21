@@ -1,5 +1,9 @@
 <div class="container" ng-controller="storeController">
 
+  <div ng-hide="inventory">
+    Loading store inventory...
+    <div class="loader"></div>
+  </div>
   <div>
     <div class="row">
       <div ng-show="pane == 'shop'" class="col-lg-8">
