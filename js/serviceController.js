@@ -141,19 +141,6 @@ function serviceController($scope) {
       ],
     },
     {
-      name: 'Lomilomi Massage',
-      desc: 'Lomilomi massage is part of traditional Native Hawaiian medicine. It uses long, flowing, dance-like strokes, gentle stretches and joint rotations. Generous amounts of oils are applied. Traditional lomi lomi may include abdominal massage because Hawaiian tradition considers the colon part of a person\'s soul or heart.',
-      link: 'http://health.howstuffworks.com/wellness/spa-health/lomi-lomi-massage.htm',
-      prices: [
-        {duration: '30 minutes', price: '$55'},
-        {duration: '45 minutes', price: '$70'},
-        {duration: '1 hour', price: '$85'},
-        {duration: '75 minutes', price: '$100'},
-        {duration: '90 minutes', price: '$125'},
-        {duration: '2 hour', price: '$165'},
-      ],
-    },
-    {
       name: 'Reiki',
       desc: 'Reiki is a gentle complementary therapy which through a series of still, light-to-no touch holds enhances energetic flow throughout the body. Reiki should not be used as the sole treatment to a condition needing medical attention but can be a great facilitator to the body’s own natural healing processes as well as a tool in regaining a feeling of peace and balance.',
       prices: [
@@ -163,17 +150,6 @@ function serviceController($scope) {
         {duration: '75 minutes', price: '$90'},
         {duration: '90 minutes', price: '$105'},
         {duration: '2 hour', price: '$145'},
-      ],
-    },
-    {
-      name: 'Manual Lymphatic Drainage',
-      desc: 'Manual Lymphatic Drainage, (MLD) is a gentle massage technique that works to encourage the natural movement of lymph fluid and promote relaxation. MLD is recommended for lymphedema (post-surgical and post-traumatic), detoxification, arthritis, chronic pain, and other illnesses.',
-      link: 'https://www.massagetherapy.com/articles/benefits-lymphatic-massage',
-      prices: [
-        {duration: '1 hour', price: '$85'},
-        {duration: '75 minutes', price: '$100'},
-        {duration: '90 minutes', price: '$125'},
-        {duration: '2 hour', price: '$165'},
       ],
     },
   ]
