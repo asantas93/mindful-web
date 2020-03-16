@@ -80,5 +80,29 @@ function aboutController($scope) {
       bio: 'Massage has been a healing tool in my life. I hope to provide healing and comfort to my clients with a theraputic and caring touch.',
       license: 'MT011241'
     },
+    {
+      name: 'Pamela Ann',
+      img: 'img/therapist/pamela.png',
+      edu: 'Office Assistant',
+      bio: 'More info coming soon.',
+    },
+    {
+      name: 'Darrell Lynch',
+      img: 'img/therapist/darrell.png',
+      edu: 'LMT',
+      bio: 'More info coming soon.',
+    },
+    {
+      name: 'Nicole Nomicon',
+      img: 'img/therapist/nicole.png',
+      edu: 'LMT',
+      bio: 'More info coming soon.',
+    },
+    {
+      name: 'Mary Peacock',
+      img: 'img/therapist/mary.png',
+      edu: 'LMT',
+      bio: 'More info coming soon.',
+    },
   ];
 }
