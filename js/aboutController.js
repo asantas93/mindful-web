@@ -21,14 +21,6 @@ function aboutController($scope) {
       license: 'MT002654'
     },
     {
-      name: 'Lee McKinney',
-      img: 'img/therapist/lee.jpg',
-      edu: 'LMT',
-      education: ['LMT Florida School of Massage 2009'],
-      bio: 'Massage Therapy called to me for its healing and energetic benefits. I strive to offer my clients a safe and nonjudgmental place to unwind the mind and body from the daily stressors of life.',
-      license: 'MT007158'
-    },
-    {
       name: 'Stephen O\'Haire',
       img: 'img/therapist/stephen.jpg',
       edu: 'BA, LMT',
