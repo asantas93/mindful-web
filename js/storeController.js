@@ -7,6 +7,11 @@ function storeController($scope, $http) {
   }).then(function successCallback(response) {
     const inventory = response.data
     $scope.inventory = inventory;
+    var sp = inventory.find(el => el['name'] == 'Cyber Monday Special');
+    if (sp) {
+      inventory.splice(inventory.indexOf(sp), 1);
+      inventory.unshift(sp);
+    }
   }, function failureCallback(response) {
     console.log(response);
   });
@@ -19,6 +24,7 @@ function storeController($scope, $http) {
     return tot;
   };
   $scope.pane = 'shop';
+  $scope.buying = false;
   $scope.cartAdd = function(item, variation) {
     $scope.cart.push({
       itemId: item.id,
