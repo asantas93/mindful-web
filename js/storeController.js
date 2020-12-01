@@ -118,7 +118,7 @@ function storeController($scope, $http) {
         // No errors occurred. Extract the card nonce.
         } else {
 
-          waitingDialog.show('Processing your order');
+          waitingDialog.show('Processing your order - this make take several seconds...');
           $http({
             method: 'POST',
             url: api + '/order',
@@ -130,6 +130,7 @@ function storeController($scope, $http) {
             headers: {
               'Content-Type': 'application/json; charset=utf-8'
             },
+            timeout: 100000,
           }).then(function successCallback(response) {
             waitingDialog.hide();
             alert('Your order has been processed. Expect an email with your receipt within a few minutes.');
@@ -137,7 +138,11 @@ function storeController($scope, $http) {
           }, function failureCallback(response) {
             console.log(response);
             waitingDialog.hide();
-            alert('There was an error processing your order.\nError:\n' + JSON.stringify(response.data) + '\nIf you do not know how to resolve this issue or believe there is a problem with our website, please email an image of this error to staff@mindfulmassage.biz and call our office for assistance.\nAdditional details:\n' + JSON.stringify(response));
+            if (~~(response.status / 100) === 4) {
+              alert('There was an error processing your order.\nError:\n' + JSON.stringify(response.data) + '\nIf you do not know how to resolve this issue or believe there is a problem with our website, please email an image of this error to staff@mindfulmassage.biz and call our office for assistance.\nAdditional details:\n' + JSON.stringify(response));
+            } else {
+              alert('Your order did not complete within expected amount of time. Please contact our office if you do not receive an email confirmation within 10 minutes.')
+            }
             window.location.href = 'https://mindfulmassage.biz';
           });
 
