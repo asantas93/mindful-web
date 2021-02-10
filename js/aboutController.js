@@ -73,7 +73,7 @@ function aboutController($scope) {
       license: 'MT011241'
     },
     {
-      name: 'Pamela Ann',
+      name: 'Pamela Johnson',
       img: 'img/therapist/pamela.png',
       edu: 'Office Assistant',
       bio: 'More info coming soon.',
@@ -85,9 +85,9 @@ function aboutController($scope) {
       bio: 'More info coming soon.',
     },
     {
-      name: 'Nicole Nomicon',
+      name: 'Nicole Tiemann',
       img: 'img/therapist/nicole.png',
-      edu: 'LMT',
+      edu: 'BFA, LMT',
       bio: 'More info coming soon.',
     },
     {
