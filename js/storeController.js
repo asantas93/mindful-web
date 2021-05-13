@@ -1,6 +1,6 @@
 function storeController($scope, $http) {
   $scope.inventory = [];
-  const api = 'https://7hf12oxl9k.execute-api.us-east-1.amazonaws.com/Prod'
+  const api = 'https://64rzzi7rv1.execute-api.us-east-1.amazonaws.com/Prod'
   $http({
     method: 'GET',
     url: api + '/inventory',
@@ -118,7 +118,7 @@ function storeController($scope, $http) {
         // No errors occurred. Extract the card nonce.
         } else {
 
-          waitingDialog.show('Processing your order - this make take several seconds...');
+          waitingDialog.show('Processing your order - this may take several seconds...');
           $http({
             method: 'POST',
             url: api + '/order',
