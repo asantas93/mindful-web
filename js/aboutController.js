@@ -21,24 +21,18 @@ function aboutController($scope) {
       license: 'MT002654'
     },
     {
+      name: 'April Milton',
+      img: 'img/therapist/april.png',
+      edu: 'Office Manager',
+      bio: 'More info coming soon.',
+    },
+    {
       name: 'Stephen O\'Haire',
       img: 'img/therapist/stephen.jpg',
       edu: 'BA, LMT',
       education: ['LMT Florida School of Massage 2008', 'BA Exercise Physiology VSU 2015'],
       bio: 'I found interest in massage therapy after an auto accident in 2004 left me with a serious lower back injury. I found that massage not only aleviated my back pain, but also left me with a general sense of happiness and ease long after receiving the bodywork. I try to pass the same benefits on to each client I see. I believe massage is a tool that can be used to promote numerous health benefits as well as universally elevate the overall quality of life of it\'s recipients.',
       license: 'MT005597'
-    },
-    {
-      name: 'Alethea Searcy',
-      firstName: 'Alethea',
-      img: 'img/therapist/alethea.jpg',
-      mmfl: true,
-      edu: 'BFA, LMT',
-      education: ['BFA Valdosta State University 2003', 'Master Cosmetologist Paul Mitchell the School 2004', 'LMT Florida School of Massage 2015'],
-      discount: '$10',
-      discounts: ['Students', 'Teachers', 'Seniors (70+ years)', 'Disabled/Handicapped', 'Nurses'],
-      bio: 'As a body-worker, I approach each client from both a broad and focused perspective, treating at least the symptomatic area and directly related muscle groups.  Given enough time, I also address as much of the whole body as possible.  The soft tissue system is extensive and often what is felt by the person as an ache or pain is only one manifestation of a network pattern. I believe it is important to acknowledge that a person is more than tissue, but also has a mind and an essence that influence their physical properties. This is why I pay attention to the expression of each individual, noticing and working with things like breath, and emotion when relevant. My goal is to help relieve and relax each client according to their needs and hopefully bring awareness to the root of any issues. If pertinent, I offer self care practices one may take home to help manage pain, deconstruct negative patterns, and bring balance. I encourage everyone to be active in his or her own life finding ways to be healthy and happy. It brings me much pleasure to be a part of peoples\' paths of healing and self-discovery!',
-      license: 'MT010934'
     },
     {
       name: 'Allyse Hargrove',
@@ -51,18 +45,6 @@ function aboutController($scope) {
       license: 'MT011249'
     },
     {
-      name: 'Iain Searcy',
-      firstName: 'Iain',
-      img: 'img/therapist/iain.jpg',
-      edu: 'LMT',
-      mmfl: true,
-      education: ['LMT Florida School of Massage 2015'],
-      discount: '$10',
-      discounts: ['Teachers'],
-      bio: 'I love exploring how the layers of muscles coincide and relate to the overall issue. I work with breathing and awareness of the pressure points. I find this speeds up the progress of a session. Growing up with therapist parents and friends gave me a lot of experience receiving different kinds of work throughout the years. This helped me find what I liked in a good massage and how to incorporate it into my work. I love what I do and hope you will too.',
-      license: 'MT011757'
-    },
-    {
       name: 'Carrie Carter',
       img: 'img/therapist/carrie.jpg',
       edu: 'AS, LMT',
@@ -71,18 +53,6 @@ function aboutController($scope) {
       discounts: ['Military'],
       bio: 'Massage has been a healing tool in my life. I hope to provide healing and comfort to my clients with a theraputic and caring touch.',
       license: 'MT011241'
-    },
-    {
-      name: 'Pamela Johnson',
-      img: 'img/therapist/pamela.png',
-      edu: 'Office Assistant',
-      bio: 'More info coming soon.',
-    },
-    {
-      name: 'Darrell Lynch',
-      img: 'img/therapist/darrell.png',
-      edu: 'LMT',
-      bio: 'More info coming soon.',
     },
     {
       name: 'Nicole Tiemann',
@@ -94,6 +64,30 @@ function aboutController($scope) {
       name: 'Mary Peacock',
       img: 'img/therapist/mary.png',
       edu: 'LMT',
+      bio: 'More info coming soon.',
+    },
+    {
+      name: 'Robi Boney',
+      img: 'img/therapist/robi.png',
+      edu: 'LMT',
+      bio: 'More info coming soon.',
+    },
+    {
+      name: 'Ivan Garcia',
+      img: 'img/therapist/ivan.jpg',
+      edu: 'LMT',
+      bio: 'More info coming soon.',
+    },
+    {
+      name: 'Melissa Miss',
+      img: 'img/therapist/melissa.jpg',
+      edu: 'LMT',
+      bio: 'More info coming soon.',
+    },
+    {
+      name: 'Amber Hill',
+      img: 'img/therapist/amber.png',
+      edu: 'Receptionist',
       bio: 'More info coming soon.',
     },
   ];
