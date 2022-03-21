@@ -82,6 +82,7 @@ function aboutController($scope) {
       name: 'Patricia Hodge',
       img: 'img/therapist/patriciah.jpg',
       edu: 'MS, BA, LMT',
+      education: ['M.S. Long Island University, New York', 'B.A. Hunter College, New York', 'LMT Pacific College of Oriental Medicine, New York'],
       bio: "I see massage and many other forms of bodywork as wonderful complementary tools, aiding the healing process.  The practitioner endeavors to assist each individual they serve, in achieving the desired goal. Which could be pain relief, de-stressing, enhancing good circulation or balancing and harmonizing the body systems.  And if that’s not enough, just an exhilarating feeling of total relaxation. How delightful!",
       license: 'MT007387',
     },
@@ -89,15 +90,9 @@ function aboutController($scope) {
       name: 'Darrell Lynch',
       img: 'img/therapist/darrell.png',
       edu: 'LMT',
-      education: 'Florida School of Massage 2019',
+      education: ['Florida School of Massage 2019'],
       bio: 'I became interested in massage after seeing the relief that massage gave me after an injury I had. I am passionate about helping people find rejuvenation and renewal amidst the stresses of life, and relief from the pains that show up in their bodies because of that stress.',
       license: 'MT012881',
-    },
-    {
-      name: 'Amber Hill',
-      img: 'img/therapist/amber.png',
-      edu: 'Receptionist',
-      bio: 'More info coming soon.',
     },
   ];
 }

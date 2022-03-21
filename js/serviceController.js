@@ -164,5 +164,15 @@ function serviceController($scope) {
         {duration: '2 hour', price: '$145'},
       ],
     },
+    {
+      name: 'Lymphatic Drainage',
+      desc: 'Lymphatic drainage massage, also known as manual lymphatic drainage, involves gently manipulating specific areas of your body to help lymph move to an area with working lymph vessels. It is utilized to relieve swelling that happens when medical treatment or illness blocks your lymphatic system. Note: If you have any of the following conditions you cannot receive this massage: congestive heart failure, kidney issues, on your menstrual cycle, or lymph node removal.',
+      prices: [
+        {duration: '1 hour', price: '$85'},
+        {duration: '75 minutes', price: '$105'},
+        {duration: '90 minutes', price: '$125'},
+        {duration: '2 hour', price: '$165'},
+      ],
+    },
   ]
 }
