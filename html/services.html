@@ -1,4 +1,47 @@
 <div class="container" ng-controller="serviceController">
+  <h3>Effective October 3rd, 2022</h3>
+  <p>As part of our mindfulness practice, we will be setting our rates according to time rather than technique. This allows us flexibility to change our approach during the session if required as we attune more deeply to your needs.</p>
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Duration</th>
+      <th scope="col">Price</th>
+      <th scope="col">Price with Hot Stones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>30 min</td>
+      <td>$55</td>
+      <td>Not Available</td>
+    </tr>
+    <tr>
+      <td>45 min</td>
+      <td>$70</td>
+      <td>$75</td>
+    </tr>
+    <tr>
+      <td>60 min</td>
+      <td>$85</td>
+      <td>$90</td>
+    </tr>
+    <tr>
+      <td>75 min</td>
+      <td>$105</td>
+      <td>$110</td>
+    </tr>
+    <tr>
+      <td>90 min</td>
+      <td>$125</td>
+      <td>$130</td>
+    </tr>
+    <tr>
+      <td>2 hr</td>
+      <td>$165</td>
+      <td>$170</td>
+    </tr>
+  </tbody>
+</table>
   <div class="row">
     <div class="col-lg-6 mb-4" ng-repeat="service in services">
       <div class="card h-100">
@@ -12,17 +55,6 @@
         <div class="card-footer" ng-show="service.link || service.prices">
           <a ng-show="service.link" ng-href="{{service.link}}" target="_blank" class="btn btn-sm btn-primary">Learn More</a>
           <a ng-show="service.video" ng-href="{{service.video}}" target="_blank" class="btn btn-sm btn-info">Watch Video</a>
-          <button class="btn btn-sm btn-secondary" type="button" data-toggle="collapse" data-target="#collapse-{{$index}}" aria-expanded="false" aria-controls="collapse-{{$index}}">
-            View Prices
-          </button>
-          <div class="collapse" id="collapse-{{$index}}">
-              <br>
-            <div class="card card-block">
-              <ul class="list-group">
-                <li class="list-group-item" ng-repeat="price in service.prices">{{price.duration}} <span class="float-right">{{price.price}}</span></li>
-              </ul>
-            </div>
-          </div>
         </div>
       </div>
     </div>
