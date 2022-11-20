@@ -77,6 +77,8 @@
           <label for="fromEmail">Your email address*</label>
           <input type="email" class="form-control" id="fromEmail" aria-describedby="emailHelp" placeholder="Enter email" ng-model="fromEmail" required>
           <small id="emailHelp" class="form-text text-muted">You will recieve your receipt at this address.</small>
+          <button href="#" class="btn btn-secondary" ng-click="pane = 'customize'">Back</button>
+          <button id="confirmPurchase" href="#" class="btn btn-success" type="submit" ng-disabled="buying === true || cardInvalid === true || email.$invalid">Confirm Purchase</button>
         </form>
       </div>
       <div class="col-xl-4">
@@ -119,32 +121,5 @@
     <button href="#" class="btn btn-secondary" ng-click="pane = 'shop'">Back</button>
     <button href="#" class="btn btn-primary" type="submit" ng-click="pane = 'payment'" ng-disabled="giftForm.$invalid">Next</button>
 
-  </div>
-  <div ng-show="pane == 'payment'">
-
-    <!--
-      After the SqPaymentForm generates a card nonce, *this* form POSTs the generated
-      card nonce to your application's server.
-
-      You should replace the action attribute of the form with the path of
-      the URL you want to POST the nonce to (for example, "/process-card")
-    -->
-    <form name="nonceForm" id="nonce-form" action="REPLACE_ME" method="post">
-
-
-      <!--
-        Whenever a nonce is generated, it's assigned as the value of this hidden
-        input field.
-      -->
-      <input type="hidden" id="card-nonce" name="nonce">
-
-      <!--
-        Clicking this Submit button kicks off the process to generate a card nonce
-        from the buyer's card information.
-      -->
-      <br>
-      <button href="#" class="btn btn-secondary" ng-click="pane = 'customize'">Back</button>
-      <button id="confirmPurchase" href="#" class="btn btn-success" type="submit" ng-disabled="buying === true || nonceForm.$invalid || email.$invalid">Confirm Purchase</button>
-    </form>
   </div>
 </div>

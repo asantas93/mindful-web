@@ -91,6 +91,16 @@ async function configureSquare($scope, $http) {
   const payments = Square.payments(applicationId, locationId);  
   const card = await payments.card();
   card.attach("#card-container");
+  $scope.cardInvalid = true;
+  function handlePaymentChange(e) {
+    $scope.cardInvalid = !(e.detail.currentState.isCompletelyValid === true);
+    $scope.$digest();
+  }
+  card.addEventListener('errorClassAdded', handlePaymentChange);
+  card.addEventListener('errorClassRemoved', handlePaymentChange);
+  card.addEventListener('focusClassRemoved', handlePaymentChange);
+  card.addEventListener('focusClassAdded', handlePaymentChange);
+  card.addEventListener('cardBrandChanged', handlePaymentChange);
   let tokenResult;
 
   const button = document.getElementById('confirmPurchase');
@@ -103,6 +113,7 @@ async function configureSquare($scope, $http) {
       console.log(e);
       alert('There was an issue with the card info provided.');
       $scope.buying = false;
+      $scope.$digest();
       return;
     }
     if (tokenResult.status === 'OK') {
@@ -126,7 +137,7 @@ async function configureSquare($scope, $http) {
       }, function failureCallback(response) {
         console.log(response);
         waitingDialog.hide();
-        if (~~(response.status / 100) === 4) {
+        if (~~(response.status / 100) > 3) {
           alert('There was an error processing your order.\nError:\n' + JSON.stringify(response.data) + '\nIf you do not know how to resolve this issue or believe there is a problem with our website, please email an image of this error to staff@mindfulmassage.biz and call our office for assistance.\nAdditional details:\n' + JSON.stringify(response));
         } else {
           alert('Your order has been received but has not yet been fulfilled. Please contact our office if you do not receive an email confirmation within 10 minutes.')
