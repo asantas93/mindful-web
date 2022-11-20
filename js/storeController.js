@@ -1,6 +1,6 @@
+const api = 'https://64rzzi7rv1.execute-api.us-east-1.amazonaws.com/Prod'
 function storeController($scope, $http) {
   $scope.inventory = [];
-  const api = 'https://64rzzi7rv1.execute-api.us-east-1.amazonaws.com/Prod'
   $http({
     method: 'GET',
     url: api + '/inventory',
@@ -79,128 +79,61 @@ function storeController($scope, $http) {
     }
   };
   $scope.data = {};
+  configureSquare($scope, $http);
+}
+
+async function configureSquare($scope, $http) {
   const applicationId = 'sq0idp-F-DAUUp0H50hzA-mXBQJAg';
-  $scope.paymentForm = new SqPaymentForm({
-    applicationId: applicationId,
-    inputClass: 'sq-input',
-    inputStyles: [
-      {
-        fontSize: '15px'
-      }
-    ],
-    cardNumber: {
-      elementId: 'sq-card-number',
-      placeholder: '•••• •••• •••• ••••'
-    },
-    cvv: {
-      elementId: 'sq-cvv',
-      placeholder: 'Enter your CVV code'
-    },
-    expirationDate: {
-      elementId: 'sq-expiration-date',
-      placeholder: 'MM/YY'
-    },
-    postalCode: {
-      elementId: 'sq-postal-code',
-      placeholder: 'Enter your billing postal code'
-    },
-    callbacks: {
+  const locationId = '203NH7K9772GC';
+  // sandbox
+  // const applicationId = 'sandbox-sq0idb-bbv8rot8eKdvZ-nXqXJ0_g';
+  // const locationId = '8WA269WJS7AHH';
+  const payments = Square.payments(applicationId, locationId);  
+  const card = await payments.card();
+  card.attach("#card-container");
+  let tokenResult;
 
-      // Called when the SqPaymentForm completes a request to generate a card
-      // nonce, even if the request failed because of an error.
-      cardNonceResponseReceived: function(errors, nonce, cardData) {
-        if (errors) {
-
-          errors.forEach(function(error) {
-            alert('Encountered error: ' + error.message);
-          });
-
-        // No errors occurred. Extract the card nonce.
-        } else {
-
-          waitingDialog.show('Processing your order - this may take several seconds...');
-          $http({
-            method: 'POST',
-            url: api + '/order',
-            data: {
-              'nonce': nonce,
-              'orders': $scope.cart,
-              'email': $scope.fromEmail,
-            },
-            headers: {
-              'Content-Type': 'application/json; charset=utf-8'
-            },
-            timeout: 100000,
-          }).then(function successCallback(response) {
-            waitingDialog.hide();
-            alert('Your order has been processed. Expect an email with your receipt within a few minutes.');
-            window.location.href = 'https://mindfulmassage.biz';
-          }, function failureCallback(response) {
-            console.log(response);
-            waitingDialog.hide();
-            if (~~(response.status / 100) === 4) {
-              alert('There was an error processing your order.\nError:\n' + JSON.stringify(response.data) + '\nIf you do not know how to resolve this issue or believe there is a problem with our website, please email an image of this error to staff@mindfulmassage.biz and call our office for assistance.\nAdditional details:\n' + JSON.stringify(response));
-            } else {
-              alert('Your order did not complete within expected amount of time. Please contact our office if you do not receive an email confirmation within 10 minutes.')
-            }
-            window.location.href = 'https://mindfulmassage.biz';
-          });
-
-
-          /*
-            These lines assign the generated card nonce to a hidden input
-            field, then submit that field to your server.
-            Uncomment them when you're ready to test out submitting nonces.
-
-            You'll also need to set the action attribute of the form element
-            at the bottom of this sample, to correspond to the URL you want to
-            submit the nonce to.
-          */
-
-        }
-      },
-
-      unsupportedBrowserDetected: function() {
-        // Fill in this callback to alert buyers when their browser is not supported.
-      },
-
-      // Fill in these cases to respond to various events that can occur while a
-      // buyer is using the payment form.
-      inputEventReceived: function(inputEvent) {
-        switch (inputEvent.eventType) {
-          case 'focusClassAdded':
-            // Handle as desired
-            break;
-          case 'focusClassRemoved':
-            // Handle as desired
-            break;
-          case 'errorClassAdded':
-            // Handle as desired
-            break;
-          case 'errorClassRemoved':
-            // Handle as desired
-            break;
-          case 'cardBrandChanged':
-            // Handle as desired
-            break;
-          case 'postalCodeChanged':
-            // Handle as desired
-            break;
-        }
-      },
-
-      paymentFormLoaded: function() {
-        // Fill in this callback to perform actions after the payment form is
-        // done loading (such as setting the postal code field programmatically).
-        // paymentForm.setPostalCode('94103');
-      }
+  const button = document.getElementById('confirmPurchase');
+  button.addEventListener('click', async (e) => {
+    e.preventDefault();
+    $scope.buying = true;
+    try {
+      tokenResult = await card.tokenize();
+    } catch (e) {
+      console.log(e);
+      $scope.buying = false;
+      return;
     }
-  });
-  $scope.requestCardNonce = function(event) {
-    event.preventDefault();
-    $scope.paymentForm.requestCardNonce();
-  };
-  angular.element(document).ready(function () {
-    $scope.paymentForm.build();
+    if (tokenResult.status === 'OK') {
+      waitingDialog.show('Processing your order - this may take several seconds...');
+      $http({
+        method: 'POST',
+        url: api + '/order',
+        data: {
+          'nonce': tokenResult.token,
+          'orders': $scope.cart,
+          'email': $scope.fromEmail,
+        },
+        headers: {
+          'Content-Type': 'application/json; charset=utf-8'
+        },
+        timeout: 100000,
+      }).then(function successCallback(response) {
+        waitingDialog.hide();
+        alert('Your order has been processed. Expect an email with your receipt within a few minutes.');
+        window.location.href = 'https://mindfulmassage.biz';
+      }, function failureCallback(response) {
+        console.log(response);
+        waitingDialog.hide();
+        if (~~(response.status / 100) === 4) {
+          alert('There was an error processing your order.\nError:\n' + JSON.stringify(response.data) + '\nIf you do not know how to resolve this issue or believe there is a problem with our website, please email an image of this error to staff@mindfulmassage.biz and call our office for assistance.\nAdditional details:\n' + JSON.stringify(response));
+        } else {
+          alert('Your order did not complete within expected amount of time. Please contact our office if you do not receive an email confirmation within 10 minutes.')
+        }
+        window.location.href = 'https://mindfulmassage.biz';
+      });
+    } else {
+      console.log('Token result unsuccessful');
+    }
   });
 }

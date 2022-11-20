@@ -70,19 +70,9 @@
         </form>
       </div>
       <div ng-show="pane == 'payment'" class="col-lg-8">
-        <div class="card">
-          <h5 class="card-header">Payment Information</h5>
-          <div class="card-body">
-            <label>Card Number</label>
-            <div id="sq-card-number"></div>
-            <label>CVV</label>
-            <div id="sq-cvv"></div>
-            <label>Expiration Date</label>
-            <div id="sq-expiration-date"></div>
-            <label>Postal Code</label>
-            <div id="sq-postal-code"></div>
-          </div>
-        </div>
+        <form id="payment-form">
+          <div id="card-container"></div>
+        </form>
         <form name="email" class="form-group">
           <label for="fromEmail">Your email address*</label>
           <input type="email" class="form-control" id="fromEmail" aria-describedby="emailHelp" placeholder="Enter email" ng-model="fromEmail" required>
@@ -154,7 +144,7 @@
       -->
       <br>
       <button href="#" class="btn btn-secondary" ng-click="pane = 'customize'">Back</button>
-      <button href="#" class="btn btn-success" type="submit" ng-click="buying = true; requestCardNonce($event)" ng-disabled="buying === true || nonceForm.$invalid || email.$invalid">Confirm Purchase</button>
+      <button id="confirmPurchase" href="#" class="btn btn-success" type="submit" ng-disabled="buying === true || nonceForm.$invalid || email.$invalid">Confirm Purchase</button>
     </form>
   </div>
 </div>
