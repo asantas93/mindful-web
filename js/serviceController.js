@@ -153,18 +153,6 @@ function serviceController($scope) {
       ],
     },
     {
-      name: 'Reiki',
-      desc: 'Reiki is a gentle complementary therapy which through a series of still, light-to-no touch holds enhances energetic flow throughout the body. Reiki should not be used as the sole treatment to a condition needing medical attention but can be a great facilitator to the body’s own natural healing processes as well as a tool in regaining a feeling of peace and balance.',
-      prices: [
-        {duration: '30 minutes', price: '$45'},
-        {duration: '45 minutes', price: '$60'},
-        {duration: '1 hour', price: '$75'},
-        {duration: '75 minutes', price: '$90'},
-        {duration: '90 minutes', price: '$105'},
-        {duration: '2 hour', price: '$145'},
-      ],
-    },
-    {
       name: 'Lymphatic Drainage',
       desc: 'Lymphatic drainage massage, also known as manual lymphatic drainage, involves gently manipulating specific areas of your body to help lymph move to an area with working lymph vessels. It is utilized to relieve swelling that happens when medical treatment or illness blocks your lymphatic system. Note: If you have any of the following conditions you cannot receive this massage: congestive heart failure, kidney issues, on your menstrual cycle, or lymph node removal.',
       prices: [

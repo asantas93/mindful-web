@@ -101,6 +101,7 @@ async function configureSquare($scope, $http) {
       tokenResult = await card.tokenize();
     } catch (e) {
       console.log(e);
+      alert('There was an issue with the card info provided.');
       $scope.buying = false;
       return;
     }
@@ -128,7 +129,7 @@ async function configureSquare($scope, $http) {
         if (~~(response.status / 100) === 4) {
           alert('There was an error processing your order.\nError:\n' + JSON.stringify(response.data) + '\nIf you do not know how to resolve this issue or believe there is a problem with our website, please email an image of this error to staff@mindfulmassage.biz and call our office for assistance.\nAdditional details:\n' + JSON.stringify(response));
         } else {
-          alert('Your order did not complete within expected amount of time. Please contact our office if you do not receive an email confirmation within 10 minutes.')
+          alert('Your order has been received but has not yet been fulfilled. Please contact our office if you do not receive an email confirmation within 10 minutes.')
         }
         window.location.href = 'https://mindfulmassage.biz';
       });
