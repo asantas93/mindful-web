@@ -21,28 +21,18 @@ function aboutController($scope) {
       license: 'MT002654'
     },
     {
-      name: 'April Milton',
-      img: 'img/therapist/april.png',
-      edu: 'Office Manager',
-      bio: 'More info coming soon.',
+      name: 'Nicole Tieman',
+      img: 'img/therapist/nicole.jpg',
+      edu: 'BA, LMT, Thai Yogi, Lead Therapist',
+      education: ['B.A. in Philosophy & Religious Studies 2016 from Valdosta State University', 'Massage Therapy, Hydrotherapy, and Aromatherapy 2018 from Florida School of Massage', 'Advanced Certification in Traditional Thai Massage & Ayurveda from BodiSangha School of Thai Massage (Completion April 2022)'],
+      bio: 'Utilizing modern and ancient techniques, my Massage Therapy practice flows from Western and Eastern sciences, philosophies, and traditions. In every session I offer a safe space for cultivating awareness of one’s body and mind, whether I’m working with an injured athlete or encouraging rest for the restless.  Massage is for everyone, and I love sharing this art with my clients. I look forward to working with you!',
+      license: 'MT012837',
     },
     {
-      name: 'Stephen O\'Haire',
-      img: 'img/therapist/stephen.jpg',
-      edu: 'BA, LMT',
-      education: ['LMT Florida School of Massage 2008', 'BA Exercise Physiology VSU 2015'],
-      bio: 'I found interest in massage therapy after an auto accident in 2004 left me with a serious lower back injury. I found that massage not only aleviated my back pain, but also left me with a general sense of happiness and ease long after receiving the bodywork. I try to pass the same benefits on to each client I see. I believe massage is a tool that can be used to promote numerous health benefits as well as universally elevate the overall quality of life of it\'s recipients.',
-      license: 'MT005597'
-    },
-    {
-      name: 'Allyse Hargrove',
-      img: 'img/therapist/allyse.jpg',
-      edu: 'AS, LMT, CSMT',
-      education: ['Diploma of Neuromuscular Massage Therapy Southern Regional Technical College 2016', 'AS Secondary Education Georgia Military College 2010'],
-      discount: '$5',
-      discounts: ['Military', 'CrossFit'],
-      bio: 'I became a massage therapist to help people achieve relief whether it be from muscular tension, stress, or chronic or acute injuries, as well as promote healing and performance, amongst athletes. I hope to provide my clients with the tools and knowledge to continue their therapy during their everyday lives.',
-      license: 'MT011249'
+      name: 'Pamela Johnson',
+      img: 'img/therapist/pamela.jpg',
+      edu: 'MJ, BA, Office Administrator & Mindfully Made Product Manager',
+      education: ['MJ University of Tulsa College of Law 2017', 'BA Philosophy & Religious Studies, VSU 2013'],
     },
     {
       name: 'Carrie Carter',
@@ -53,14 +43,6 @@ function aboutController($scope) {
       discounts: ['Military'],
       bio: 'Massage has been a healing tool in my life. I hope to provide healing and comfort to my clients with a theraputic and caring touch.',
       license: 'MT011241'
-    },
-    {
-      name: 'Nicole Tieman',
-      img: 'img/therapist/nicole.png',
-      edu: 'BFA, LMT, Thai Yogi',
-      education: ['B.A. in Philosophy & Religious Studies 2016 from Valdosta State University', 'Massage Therapy, Hydrotherapy, and Aromatherapy 2018 from Florida School of Massage', 'Advanced Certification in Traditional Thai Massage & Ayurveda from BodiSangha School of Thai Massage (Completion April 2022)'],
-      bio: 'Utilizing modern and ancient techniques, my Massage Therapy practice flows from Western and Eastern sciences, philosophies, and traditions. In every session I offer a safe space for cultivating awareness of one’s body and mind, whether I’m working with an injured athlete or encouraging rest for the restless.  Massage is for everyone, and I love sharing this art with my clients. I look forward to working with you!',
-      license: 'MT012837',
     },
     {
       name: 'Robi Boney',
@@ -93,6 +75,14 @@ function aboutController($scope) {
       education: ['Florida School of Massage 2019'],
       bio: 'I became interested in massage after seeing the relief that massage gave me after an injury I had. I am passionate about helping people find rejuvenation and renewal amidst the stresses of life, and relief from the pains that show up in their bodies because of that stress.',
       license: 'MT012881',
+    },
+    {
+      name: 'Abby Voigt',
+      img: 'img/therapist/abby.jpg',
+      edu: 'LMT, HHP, RYT-200, CCP',
+      education: ['San Diego Academy of Health Professions'],
+      bio: 'Abby is a licensed Massage Therapist with twenty-five years of experience. She specializes in Deep Tissue, Swedish Relaxation, Myofascial, Hot Stone, and Sports massage. Her broad knowledge of the body allows her to tailor every massage to meet her clients specific needs and overall goals in health and wellness. As a mother of three, and just recently a new grandmother, Abby also specializes in both prenatal and postpartum massage and believes strongly in its benefits for both mom and baby.',
+      license: 'MT013409',
     },
   ];
 }
