@@ -74,11 +74,11 @@ function serviceController($scope) {
       name: 'Hot Stone Therapy',
       desc: 'Melts away tension, eases muscle stiffness and increases circulation and metabolism. A hot stone massage therapy session promotes deeper muscle relaxation through the placement of smooth, water-heated stones at key points on the body',
       prices: [
-        {duration: '45 minutes', price: '$75'},
-        {duration: '1 hour', price: '$90'},
-        {duration: '75 minutes', price: '$105'},
-        {duration: '90 minutes', price: '$125'},
-        {duration: '2 hour', price: '$165'},
+        {duration: '45 minutes', price: '$95'},
+        {duration: '1 hour', price: '$110'},
+        {duration: '75 minutes', price: '$130'},
+        {duration: '90 minutes', price: '$150'},
+        {duration: '2 hour', price: '$190'},
       ],
     },
     {
