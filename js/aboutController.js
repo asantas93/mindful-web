@@ -35,38 +35,12 @@ function aboutController($scope) {
       education: ['MJ University of Tulsa College of Law 2017', 'BA Philosophy & Religious Studies, VSU 2013'],
     },
     {
-      name: 'Carrie Carter',
-      img: 'img/therapist/carrie.jpg',
-      edu: 'AS, LMT',
-      education: ['Diploma of Neuromuscular Massage Therapy Southern Regional Technical College 2016', 'AS Business Management SRTC 2014'],
-      discount: '10$',
-      discounts: ['Military'],
-      bio: 'Massage has been a healing tool in my life. I hope to provide healing and comfort to my clients with a theraputic and caring touch.',
-      license: 'MT011241'
-    },
-    {
       name: 'Robi Boney',
       img: 'img/therapist/robi.png',
       edu: 'LMT',
       education: ['Florida School of Massage Sports Massage', 'Center For Neurosomatic Therapy'],
       bio: 'Highly-skilled Licensed Massage Therapist with more than 20 years’ experience with a wide array of healing techniques/modalities. Committed to providing therapeutic body work, for injuries and rehabilitation.  Production skills and knowledge of chiropractic/orthopedic/physical therapy modalities in therapeutic body work. Production skills in education of injury prevention.',
       license: 'MT013380',
-    },
-    {
-      name: 'Ivan Garcia',
-      img: 'img/therapist/ivan.jpg',
-      edu: 'LMT',
-      education: ['Diploma of Neuromuscular Massage Therapy from Southern Regional Technical School'],
-      bio: 'I have always enjoyed helping people feel better and seeing them smile, becoming a massage therapist has helped me provide not only happiness but relief to my clients! I enjoy being able to give information to my clients to help them find relief from muscular tension and daily stress. I strive to help my clients to be as stress free as possible!',
-      license: 'MT012867',
-    },
-    {
-      name: 'Patricia Hodge',
-      img: 'img/therapist/patriciah.jpg',
-      edu: 'MS, BA, LMT',
-      education: ['M.S. Long Island University, New York', 'B.A. Hunter College, New York', 'LMT Pacific College of Oriental Medicine, New York'],
-      bio: "I see massage and many other forms of bodywork as wonderful complementary tools, aiding the healing process.  The practitioner endeavors to assist each individual they serve, in achieving the desired goal. Which could be pain relief, de-stressing, enhancing good circulation or balancing and harmonizing the body systems.  And if that’s not enough, just an exhilarating feeling of total relaxation. How delightful!",
-      license: 'MT007387',
     },
     {
       name: 'Darrell Lynch',
